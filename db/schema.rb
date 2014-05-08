@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507161018) do
+ActiveRecord::Schema.define(version: 20140507204409) do
 
   create_table "addresses", force: true do |t|
     t.string   "addressable_type"
@@ -61,5 +61,13 @@ ActiveRecord::Schema.define(version: 20140507161018) do
   end
 
   add_index "owners", ["ownership_type", "ownership_id"], name: "index_owners_on_ownership_type_and_ownership_id"
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
