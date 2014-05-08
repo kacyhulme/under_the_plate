@@ -23,10 +23,4 @@ private
 		resource, id = request.path.split('/')[1, 2] #/establishments/1
 		@addressable = resource.singularize.classify.constantize.find(id) #Establishment.find(1)
 	end
-
-	# --or use this
-	# def load_addressable
-	# 	klass = [Owner, Establishment, Distributor].detect { |a| params["#{a.name.underscore}_id"]}
-	# 	@addressable = klass.find(params["#{klass.name.underscore}_id"])
-	# end
 end
