@@ -1,0 +1,8 @@
+<h1><%= pluralize(@distributors.size, 'Distributor') %></h1>
+<ul>
+	<% @distributors.each do |distributor| %>
+	<li>
+		<%= link_to distributor.name, distributor %>
+	</li>
+	<% end %>
+</ul>

@@ -12,7 +12,15 @@
  *
  *= require_tree .
  *= require_self
+ *= require users
+ *= require establishments
+ *= require addresses
+ *= require distributors
+ *= require owners
  */
 
+footer {
+	margin-top: 50px;
+}
 
 @import "bootstrap";
