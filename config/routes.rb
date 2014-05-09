@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get 'welcome' => 'welcome#index'
+  get 'signup' => 'users#new'
+  get 'signin' => 'sessions#new'
 
+  resource :session
+  
   resources :users
   resources :addresses
 
