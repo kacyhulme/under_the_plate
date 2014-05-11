@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507204409) do
+ActiveRecord::Schema.define(version: 20140511165558) do
 
   create_table "addresses", force: true do |t|
     t.string   "addressable_type"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20140507204409) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin",           default: false
   end
 
 end
