@@ -1,5 +1,7 @@
 class AddressesController < ApplicationController
 	before_filter :load_addressable
+	before_action :require_signin
+	before_action :require_admin
 
 	def index
 		@addresses = @addressable.addresses
