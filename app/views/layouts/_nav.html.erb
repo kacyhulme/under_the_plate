@@ -1,3 +1,4 @@
+<% if current_user %>
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -5,24 +6,34 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "All Establishments", establishments_path %></li>
-        <li class="active"><%= link_to "All Users", users_path %></li>
-        <li class="active"><%= link_to "All Distributors", distributors_path %></li>
+        <li class="active"><%= link_to "Establishments", establishments_path %></li>
+        <li class="active"><%= link_to "Users", users_path %></li>
+        <li class="active"><%= link_to "Distributors", distributors_path %></li>
       </ul>
       <form class="navbar-form navbar-right" role="search">
-        <% if current_user %>
           Hi, <%= link_to current_user.name, current_user %>!
-          <button class="btn btn-default"><%= link_to "Account Settings", edit_user_path(@current_user) %></button>
+          <button class="btn btn-default"><%= link_to "Account Settings", edit_user_path(current_user) %></button>
           <button class="btn btn-default"><%= link_to "Sign Out", session_path, method: :delete %></button>
-        <% else %>
-          <button class="btn btn-default"><%= link_to "Sign Up", signup_path %></button>
-          <button class="btn btn-default"><%= link_to "Sign In", signin_path %></button>
-        <% end %>
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
-    </div><!-- /.navbar-collapse -->
+    </div>
   </div><!-- /.container-fluid -->
 </nav>
+
+<% else %>
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form class="navbar-form navbar-right" role="search">
+          <button class="btn btn-default"><%= link_to "Sign Up", signup_path %></button>
+          <button class="btn btn-default"><%= link_to "Sign In", signin_path %></button>
+          <div class="form-group">
+        </form>
+      </div>
+    </div>
+  </nav>
+<% end %>

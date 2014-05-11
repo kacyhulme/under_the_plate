@@ -5,16 +5,16 @@
 <div class="container"> 
   <div class="row"> 
     <% @establishments.each do |establishment| %> 
-        <div class="col-md-3">
-          <div class="thumbnail">
-            <div> Name <%= link_to establishment.name, establishment %></div>
-            <div>Address <%= establishment.address_id %></div>
-            <div>Owner <%= establishment.owner_id %></div>
-            <div>Distributor <%= establishment.distributor_id %></div>
-            <div>Cuisine<%= establishment.cuisine %></div>
-            <div>Details <%= link_to 'Establishment Details', establishment %></div> 
-          </div>  
-        </div>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <div>Name <%= link_to establishment.name, establishment %></div>
+          <div>Address <%= establishment.address_id %></div>
+          <div>Owner <%= establishment.owner_id %></div>
+          <div>Distributor <%= establishment.distributor_id %></div>
+          <div>Cuisine<%= establishment.cuisine %></div>
+          <div>Details <%= link_to 'More Details', establishment %></div> 
+        </div>  
+      </div>
     <% end %>
   </div>
 </div>
