@@ -12,4 +12,3 @@ class FoodGroupsController < ApplicationController
 	end
 end
 
-end
