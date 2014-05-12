@@ -15,7 +15,7 @@ Address.create!([
     city: "Austin",
     state: "Texas",
     zip: "78703",
-    phone: 5124728226,
+    phone: "5124728226",
     website: "www.zocalocafe.com"
 		},
   {
@@ -26,7 +26,7 @@ Address.create!([
     city: "Dallas",
     state: "Texas",
     zip: "75211",
-    phone: 2145558733,
+    phone: "2145558733",
     website: "www.foodmanufacturers.com" 
   },
   {
@@ -37,7 +37,7 @@ Address.create!([
     city: "Dallas",
     state: "Texas",
     zip: "75210",
-    phone: 2145553442,
+    phone: "2145553442",
     website: "www.sambrowninc.com" 
   },
 {
@@ -48,7 +48,7 @@ Address.create!([
     city: "Austin",
     state: "Texas",
     zip: "78704",
-    phone: 5124161601,
+    phone: "5124161601",
     website: "www.bouldincreek.com"
     },
   {
@@ -59,7 +59,7 @@ Address.create!([
     city: "Santa Barbara",
     state: "California",
     zip: "93101",
-    phone: 8055558900,
+    phone: "8055558900",
     website: "www.organicfoodmerchants.com" 
   },
   {
@@ -70,7 +70,7 @@ Address.create!([
     city: "Dallas",
     state: "Texas",
     zip: "75210",
-    phone: 2145553442,
+    phone: "2145553442",
     website: "www.sambrowninc.com" 
   },
 {
@@ -81,7 +81,7 @@ Address.create!([
     city: "Austin",
     state: "Texas",
     zip: "78704",
-    phone: 5124336521,
+    phone: "5124336521",
     website: "www.oddduckaustin.com"
     },
   {
@@ -92,7 +92,7 @@ Address.create!([
     city: "Oxnard",
     state: "California",
     zip: "93030",
-    phone: 2135552222,
+    phone: "2135552222",
     website: "www.maggiesfarm.com" 
   },
   {
@@ -103,7 +103,7 @@ Address.create!([
     city: "Dallas",
     state: "Texas",
     zip: "75210",
-    phone: 2145553442,
+    phone: "2145553442",
     website: "www.sambrowninc.com" 
   }  
 ])
