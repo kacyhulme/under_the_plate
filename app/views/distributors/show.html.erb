@@ -1,0 +1,25 @@
+<nav>
+   <%= link_to 'All Distributors', distributors_path %>
+ </nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+        <h1>Distributor: <%= @distributor.name %></h1>
+				<div>Address: <%=@distributor.address_id %></div>
+				<div>Owner: <%=@distributor.owner_id %></div>
+				<div>Food Groups:
+					<ul>
+					<% @food_groups.each do |f| %>
+					<li><%= f.name %></li>
+					<% end %>
+				</ul>
+				</div>
+
+        <% if current_user_admin? %>
+	        <%= link_to "Edit Distributor", edit_distributor_path(@distributor), class: "btn btn-primary" %>
+	        <%= link_to "Delete Distributor", @distributor, method: :delete,
+	        data: { confirm: "Are you sure you want to delete this distributor?" }, class: "btn btn-primary" %>
+        <% end %>
+    </div>
+  </div>
+</div>

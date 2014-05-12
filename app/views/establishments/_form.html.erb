@@ -22,8 +22,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :cuisine %>    
-      <%= f.text_field :cuisine, class: "form-control" %>
+      <%= f.collection_check_boxes :cuisine_ids, Cuisine.all, :id, :name, {}, {class: "form-control"}  %>
     </div>
 
     <div class="actions">
