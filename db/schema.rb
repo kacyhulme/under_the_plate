@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140511165558) do
+ActiveRecord::Schema.define(version: 20140512202912) do
 
   create_table "addresses", force: true do |t|
     t.string   "addressable_type"
@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(version: 20140511165558) do
     t.string   "zip"
     t.integer  "phone"
     t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cuisine_categorizations", force: true do |t|
+    t.integer  "establishment_id"
+    t.integer  "cuisine_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cuisine_categorizations", ["cuisine_id"], name: "index_cuisine_categorizations_on_cuisine_id"
+  add_index "cuisine_categorizations", ["establishment_id"], name: "index_cuisine_categorizations_on_establishment_id"
+
+  create_table "cuisines", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,7 +57,6 @@ ActiveRecord::Schema.define(version: 20140511165558) do
     t.integer  "address_id"
     t.integer  "owner_id"
     t.integer  "distributor_id"
-    t.string   "cuisine"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,6 +64,22 @@ ActiveRecord::Schema.define(version: 20140511165558) do
   add_index "establishments", ["address_id"], name: "index_establishments_on_address_id"
   add_index "establishments", ["distributor_id"], name: "index_establishments_on_distributor_id"
   add_index "establishments", ["owner_id"], name: "index_establishments_on_owner_id"
+
+  create_table "food_group_categorizations", force: true do |t|
+    t.integer  "distributor_id"
+    t.integer  "food_group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "food_group_categorizations", ["distributor_id"], name: "index_food_group_categorizations_on_distributor_id"
+  add_index "food_group_categorizations", ["food_group_id"], name: "index_food_group_categorizations_on_food_group_id"
+
+  create_table "food_groups", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "owners", force: true do |t|
     t.string   "name"

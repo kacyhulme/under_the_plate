@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :food_groups
+
+  resources :cuisines
+
   get 'welcome' => 'welcome#index'
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
