@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140512221752) do
+ActiveRecord::Schema.define(version: 20140512223403) do
 
   create_table "addresses", force: true do |t|
     t.string   "addressable_type"
@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 20140512221752) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
-    t.integer  "phone"
     t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone"
   end
 
   create_table "cuisine_categorizations", force: true do |t|
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 20140512221752) do
     t.integer  "distributor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "phone"
   end
 
   add_index "establishments", ["address_id"], name: "index_establishments_on_address_id"
