@@ -1,6 +1,8 @@
- <nav>
-   <%= link_to 'All Establishments', establishments_path %>
- </nav>
+<% content_for(:title, @establishment.name) %>
+
+<nav>
+  <%= link_to 'All Establishments', establishments_path %>
+</nav>
 <div class="container"> 
   <div class="row"> 
     <div class="col-md-3">
