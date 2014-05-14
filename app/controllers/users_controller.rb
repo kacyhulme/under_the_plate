@@ -3,7 +3,14 @@ class UsersController < ApplicationController
 	before_action :require_correct_user, only: [:edit, :update, :destroy]
 
 	def index
-		@users = User.all
+		case params[:scope]
+		when "admin"
+			@users = User.admin
+		when "non_admin"
+			@users = User.non_admin
+		else
+			@users = User.all.limit(25)
+		end
 	end
 
 	def show
