@@ -1,22 +1,18 @@
 class DistributorsController < ApplicationController
 	before_action :require_signin, except: [:index, :show]
 	before_action :require_admin, except: [:index, :show]
+	before_action :set_distributor, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@distributors = Distributor.all
 	end
 
 	def show
-		@distributor = Distributor.find(params[:id])
 		@food_groups = @distributor.food_groups
 	end
 
 	def new
 		@distributor = Distributor.new
-	end
-
-	def edit
-		@distributor = Distributor.find(params[:id])
 	end
 
 	def create
@@ -28,7 +24,27 @@ class DistributorsController < ApplicationController
 		end
 	end
 
+	def edit
+	end
+
+	def update
+		if @distributor.update(distributor_params)
+			redirect_to @distributor, notice: "Your updates have been saved"
+		else
+			render :edit
+		end
+	end
+
+	def destroy
+		@distributor.destroy
+		redirect_to distributors_url, alert: "Distributor was successfully deleted."
+	end
+
 private
+	def set_distributor
+		@distributor = Distributor.find_by!(slug: params[:id])
+	end
+
 	def distributor_params
     params.require(:distributor).permit(:name, :address_id, :owner_id, :food_group_id, :name)
   end

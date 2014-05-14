@@ -1,6 +1,7 @@
 class Establishment < ActiveRecord::Base
+
 	before_validation :generate_slug
-	
+
 	has_many :owners, as: :ownerships
 	has_many :addresses, as: :addressable
 	has_many :distributors
