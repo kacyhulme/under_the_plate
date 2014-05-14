@@ -1,13 +1,13 @@
 class EstablishmentsController < ApplicationController
 	before_action :require_signin, except: [:index, :show]
 	before_action :require_admin, except: [:index, :show]
+	before_action :set_establishment, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@establishments = Establishment.all
+		@establishments = Establishment.all.limit(25)
 	end
 
 	def show
-		@establishment = Establishment.find(params[:id])
 		@cuisines = @establishment.cuisines
 	end
 
@@ -25,11 +25,9 @@ class EstablishmentsController < ApplicationController
 	end
 
 	def edit
-		@establishment = Establishment.find(params[:id])
 	end
 
 	def update
-		@establishment = Establishment.find(params[:id])
 		if @establishment.update(establishment_params)
 			redirect_to @establishment, notice: "Your updates have been saved"
 		else
@@ -38,12 +36,15 @@ class EstablishmentsController < ApplicationController
 	end
 
 	def destroy
-		@establishment = Establishment.find(params[:id])
 		@establishment.destroy
 		redirect_to establishments_url, alert: "Establishment was successfully deleted."
 	end
 
 private
+	def set_establishment
+		@establishment = Establishment.find_by!(slug: params[:id])
+	end
+
 	def establishment_params
     params.require(:establishment).permit(:name, :address_id, :owner_id, :distributor_id, :cuisine)
   end
