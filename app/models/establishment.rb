@@ -21,4 +21,12 @@ class Establishment < ActiveRecord::Base
 	def generate_slug
 		self.slug ||= name.parameterize if name
 	end
+
+  def self.search(search)
+    if search
+      where("LOWER(name) LIKE ?", "%#{search}%")
+    else
+      "No results match your search"
+    end
+  end
 end

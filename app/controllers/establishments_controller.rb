@@ -4,7 +4,11 @@ class EstablishmentsController < ApplicationController
 	before_action :set_establishment, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@establishments = Establishment.all.limit(25)
+		if params[:search]
+			@establishments = Establishment.search(params[:search].downcase).order("created_at ASC")
+		else
+			@establishments = Establishment.all.limit(25)
+		end
 	end
 
 	def show
