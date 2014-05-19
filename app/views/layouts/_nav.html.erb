@@ -28,7 +28,12 @@
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-right" role="search">
+        <% unless current_page?(root_path) %>
+        <form class="navbar-form navbar-left">
+          <button class="btn btn-default"><%= link_to "Search Again", root_path %></button>
+        </form>
+        <% end %>
+        <form class="navbar-form navbar-right">
           <button class="btn btn-default"><%= link_to "Sign Up", signup_path %></button>
           <button class="btn btn-default"><%= link_to "Sign In", signin_path %></button>
           <div class="form-group">
