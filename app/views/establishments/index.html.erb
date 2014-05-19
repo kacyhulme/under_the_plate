@@ -1,26 +1,24 @@
-<% if session[:user_id] = nil %>
-  <p>There are <%= pluralize(@establishments.size, 'establishment') %></p>
-   <nav>
-     <%= link_to 'Add a New Establishment', new_establishment_path %>
-   </nav>
-<% end %>
+<p>There are <%= pluralize(@establishments.size, 'establishment') %></p>
+<nav>
+ <%= link_to 'Add a New Establishment', new_establishment_path %>
+</nav>
 
 <% if @establishments.any? %>
-  <div class="container"> 
-    <div class="row"> 
-      <% @establishments.each do |establishment| %> 
-        <div class="col-md-3">
-          <div class="thumbnail">
-            <div>Name <%= link_to establishment.name, establishment %></div>
-            <div>Address <%= establishment.address_id %></div>
-            <div>Owner <%= establishment.owner_id %></div>
-            <div>Distributor <%= establishment.distributor_id %></div>
-            <div>Details <%= link_to 'More Details', establishment %></div> 
-          </div>  
-        </div>
-      <% end %>
-    </div>
+<div class="container"> 
+  <div class="row"> 
+    <% @establishments.each do |establishment| %> 
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <div>Name <%= link_to establishment.name, establishment %></div>
+          <div>Address <%= establishment.address_id %></div>
+          <div>Owner <%= establishment.owner_id %></div>
+          <div>Distributor <%= establishment.distributor_id %></div>
+          <div>Details <%= link_to 'More Details', establishment %></div> 
+        </div>  
+      </div>
+    <% end %>
   </div>
+</div>
 <% else %>
   <p>No search results match <%= params[:search] %>.</p>
 <% end %>
