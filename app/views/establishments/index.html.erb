@@ -5,18 +5,22 @@
    </nav>
 <% end %>
 
-<div class="container"> 
-  <div class="row"> 
-    <% @establishments.each do |establishment| %> 
-      <div class="col-md-3">
-        <div class="thumbnail">
-          <div>Name <%= link_to establishment.name, establishment %></div>
-          <div>Address <%= establishment.address_id %></div>
-          <div>Owner <%= establishment.owner_id %></div>
-          <div>Distributor <%= establishment.distributor_id %></div>
-          <div>Details <%= link_to 'More Details', establishment %></div> 
-        </div>  
-      </div>
-    <% end %>
+<% if @establishments.any? %>
+  <div class="container"> 
+    <div class="row"> 
+      <% @establishments.each do |establishment| %> 
+        <div class="col-md-3">
+          <div class="thumbnail">
+            <div>Name <%= link_to establishment.name, establishment %></div>
+            <div>Address <%= establishment.address_id %></div>
+            <div>Owner <%= establishment.owner_id %></div>
+            <div>Distributor <%= establishment.distributor_id %></div>
+            <div>Details <%= link_to 'More Details', establishment %></div> 
+          </div>  
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+<% else %>
+  <p>No search results match <%= params[:search] %>.</p>
+<% end %>

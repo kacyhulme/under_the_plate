@@ -23,10 +23,6 @@ class Establishment < ActiveRecord::Base
 	end
 
   def self.search(search)
-    if search
-      where("LOWER(name) LIKE ?", "%#{search}%")
-    else
-      "No results match your search"
-    end
+  	where("LOWER(name) LIKE ?", "%#{search}%")
   end
 end
