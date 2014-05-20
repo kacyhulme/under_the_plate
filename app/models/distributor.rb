@@ -1,7 +1,8 @@
 class Distributor < ActiveRecord::Base
 	
-	before_validation :generate_slug
-	
+	extend FriendlyId
+  friendly_id :name, use: :slugged
+		
 	belongs_to :establishment
 	has_many :establishments
 	has_many :addresses, as: :addressable
@@ -10,11 +11,4 @@ class Distributor < ActiveRecord::Base
 
 	validates :name, :address_id, :owner_id, :food_group_id, presence: true
 
-	def generate_slug
-	  self.slug ||= self.name.parameterize if name
-	end
-
-	def to_param
-	  slug
-	end
 end

@@ -50,3 +50,5 @@ gem 'thin'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'friendly_id', '~> 5.0.0', :require => "friendly_id"

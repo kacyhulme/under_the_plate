@@ -1,7 +1,8 @@
 class Establishment < ActiveRecord::Base
 
-	before_validation :generate_slug
-
+	extend FriendlyId
+  friendly_id :name, use: :slugged
+		
 	has_many :owners, as: :ownerships
 	has_many :addresses, as: :addressable
 	has_many :distributors
@@ -14,14 +15,6 @@ class Establishment < ActiveRecord::Base
 
 	scope :newest, -> { where('created_at < ?', Time.now).order(:name).limit(25)}
 	
-	def to_param
-		slug
-	end
-
-	def generate_slug
-		self.slug ||= name.parameterize if name
-	end
-
   def self.search(search)
   	where("LOWER(name) LIKE ?", "%#{search}%")
   end

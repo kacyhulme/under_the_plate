@@ -46,7 +46,7 @@ class EstablishmentsController < ApplicationController
 
 private
 	def set_establishment
-		@establishment = Establishment.find_by!(slug: params[:id])
+		@establishment = Establishment.find_by!(params[:slug])
 	end
 
 	def establishment_params
