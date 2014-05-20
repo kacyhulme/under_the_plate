@@ -8,15 +8,31 @@
     <div class="col-md-12">
         <h1>Distributor: <%= @distributor.name %></h1>
 				<div>Address: <%=@distributor.address_id %></div>
-				<div>Owner: <%=@distributor.owner_id %></div>
-				<div>Food Groups:
+
+
+<h1>Locations</h1>
+
+<div>
+  <% @distributor.addresses.each do |d| %>
+    <p><%= d.street_number %><%= " "%><%= d.street_name %></p>
+    <p><%= d.city %><%= ", "%><%= d.state %><%= " "%><%= d.zip %></p>
+    <p><%= d.phone %></p>
+    <p><%= d.website %></p>
+  <% end %>
+
+
+				<h1>Owner: </h1>
+					<div><%=@distributor.owner_id %></div>
+				<h1>Food Groups: </h1>
 					<ul>
 					<% @food_groups.each do |f| %>
 					<li><%= f.name %></li>
 					<% end %>
 				</ul>
 				</div>
-
+<br>
+<br>
+<br>
         <% if current_user_admin? %>
 	        <%= link_to "Edit Distributor", edit_distributor_path(@distributor), class: "btn btn-primary" %>
 	        <%= link_to "Delete Distributor", @distributor, method: :delete,

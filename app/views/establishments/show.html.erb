@@ -8,7 +8,21 @@
     <div class="col-md-3">
       <div class="thumbnail">
         <div>Name: <%= @establishment.name %></div>
-        <div>Address: <%= @establishment.address_id %></div>
+
+<h1>Locations</h1>
+
+<div>
+  <% @establishment.addresses.each do |a| %>
+    <%= a.street_number %>
+    <%= a.street_name %>
+    <%= a.city %>
+    <%= a.state %>
+    <%= a.zip %>
+    <%= a.phone %>
+    <%= a.website %>
+  <% end %>
+
+
         <div>Owner: <%= @establishment.owner_id %></div>
         <div>Distributor: <%= @establishment.distributor_id %></div>
           <% @cuisines.each do |cuisine| %>

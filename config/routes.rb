@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get 'users/filter/:scope' => "users#index", as: :filtered_users 
 
   resource :session
-  
   resources :users
-  resources :addresses
+  resources :food_groups
+  resources :cuisines
 
   resources :owners do 
     resources :addresses
@@ -23,10 +23,6 @@ Rails.application.routes.draw do
     resources :addresses
     resources :owners
   end
-
-  resources :food_groups
-
-  resources :cuisines
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
