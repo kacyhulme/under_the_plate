@@ -114,19 +114,31 @@ Establishment.create!([
     address_id: 1,
     owner_id: 1,
     distributor_id: 1
-  },
+    },
   {
     name: 'Bouldin Creek Cafe',
     address_id: 4,
     owner_id: 1,
     distributor_id: 1
-  },
+    },
+  {
+    name: 'Galaxy',
+    address_id: 4,
+    owner_id: 1,
+    distributor_id: 1
+    },
+  {
+    name: 'Sushi Zushi',
+    address_id: 4,
+    owner_id: 1,
+    distributor_id: 1
+    },
   {
     name: 'Odd Duck',
     address_id: 7,
     owner_id: 1,
     distributor_id: 1
-  }    
+    }    
 ])
 
 Distributor.create!([
@@ -137,6 +149,24 @@ Distributor.create!([
     name: "Food Manufacturers" 
     },
  {
+    address_id: 5,
+    owner_id: 5,
+    food_group_id: 1,
+    name: "US Foods" 
+    },
+ {   
+    address_id: 5,
+    owner_id: 5,
+    food_group_id: 1,
+    name: "Good Food Delivery Distribution Services" 
+    },
+ {   
+    address_id: 5,
+    owner_id: 5,
+    food_group_id: 1,
+    name: "Legumes Organic" 
+    },
+ {   
     address_id: 5,
     owner_id: 5,
     food_group_id: 1,
@@ -256,5 +286,20 @@ User.create! ([
     password: "password",
     password_confirmation: "password",
     admin: false
+    }
+])
+
+CuisineCategorization.create! ([
+  {
+    establishment_id: 1,
+    cuisine_id: 9
+    },
+  {
+    establishment_id: 4,
+    cuisine_id: 9
+    },
+  {
+    establishment_id: 7,
+    cuisine_id: 9
     }
 ])
