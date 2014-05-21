@@ -1,14 +1,5 @@
 <h1>Addresses</h1>
 
-<div>
-	<% @addresses.each do |address| %>
-		<%= address.street_number %>
-		<%= address.street_name %>
-		<%= address.city %>
-		<%= address.state %>
-		<%= address.zip %>
-		<%= address.phone %>
-		<%= address.website %>
-	<% end %>
-</div>
+<%= render 'addresses' %>
+
 <div><%= link_to "New Address", [:new, @addressable, :address] %><div>

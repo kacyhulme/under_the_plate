@@ -13,6 +13,9 @@ class EstablishmentsController < ApplicationController
 
 	def show
 		@cuisines = @establishment.cuisines
+		@addressable = @establishment
+		@addresses = @addressable.addresses
+		@address = Address.new
 	end
 
 	def new

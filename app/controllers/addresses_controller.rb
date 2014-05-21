@@ -14,7 +14,7 @@ class AddressesController < ApplicationController
 	def create
 		@address = @addressable.address.new(params[:address])
 		if @address.save
-			redirect_to [@addressable, @address], notice: "Thanks, that Address was created."
+			redirect_to @addressable, notice: "Thanks, that Address was created."
 		else
 			render :new
 		end
