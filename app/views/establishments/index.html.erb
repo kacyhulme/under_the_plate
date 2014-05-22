@@ -10,9 +10,10 @@
       <div class="col-md-3">
         <div class="thumbnail">
           <h1><%= link_to establishment.name, establishment %></h1>
-          <div><%= establishment.addresses.count %> Location in</div>
+          <div><%= establishment.addresses.count %> Location in </div>
           <% establishment.addresses.each do |a| %>
-          <div><%= a.city %></div>
+          <%= a.city %>
+          <div><%= a.address_display_name %></div>
           <% end %>
           <div><%= link_to 'More Details', establishment %></div> 
         </div>  

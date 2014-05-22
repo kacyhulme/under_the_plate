@@ -1,45 +1,41 @@
 <% content_for(:title, @establishment.name) %>
-<nav>
-  <%= link_to 'Back to All Establishments', establishments_path %>
-</nav>
+
 <div class="container"> 
   <div class="row"> 
+    <div class="col-md-12" id="establishment_header">
+        <h1><%= @establishment.name %></h1>
+    </div>
+  </div>
+
+  <div class="row"> 
     <div class="col-md-3">
-      <div class="thumbnail">
-        <h1> Name: <%= @establishment.name %></h1>
-        <h2> Locations </h2>
-          <%= render 'addresses/addresses' %>
-      </div>
+      <h3> Locations </h3>
+        <%= render 'addresses/addresses' %>
     </div>
 
     <div class="col-md-3">
-      <div class="thumbnail">
-        <div> Add a New Location </div>
-          <%= render 'addresses/form' %>
-      </div>
+      <h3> Add a New Location </h3>
+        <%= render 'addresses/form' %>
     </div>
 
     <div class="col-md-3">
-      <div class="thumbnail">
-        <h2> Owner: </h2> 
-          <div><%= @establishment.owner_id %></div>
-        <h2> Distributor: </h2>
-          <div><%= @establishment.distributor_id %></div>
-        <h2> Cuisine: </h2>
-          <% @cuisines.each do |cuisine| %>
-            <div><%= cuisine.name %></div>
-          <% end %>
-      </div>  
-    </div>
-
-    <div class="col-md-3">
-      <div class="thumbnail">      
-        <% if current_user_admin? %>
-          <p><%= link_to "Edit Establishment", edit_establishment_path(@establishment), class: "btn btn-primary" %></p>
-          <p><%= link_to "Delete Establishment", @establishment, method: :delete, 
-          data: { confirm: "Are you sure you want to delete this establishment?" }, class: "btn btn-primary" %></p>
+      <h3> Owner </h3> 
+        <div><%= @establishment.owner_id %></div>
+      <h3> Distributor </h3>
+        <div><%= @establishment.distributor_id %></div>
+      <h3> Cuisine </h3>
+        <% @cuisines.each do |cuisine| %>
+          <div><%= cuisine.name %></div>
         <% end %>
-      </div>
+    </div>
+
+    <div class="col-md-3">
+      <p><%= link_to 'View All Establishments', establishments_path, class: "btn btn-primary btn-sm" %></p>
+      <% if current_user_admin? %>
+        <p><%= link_to "Edit Establishment", edit_establishment_path(@establishment), class: "btn btn-primary btn-sm" %></p>
+        <p><%= link_to "Delete Establishment", @establishment, method: :delete, 
+        data: { confirm: "Are you sure you want to delete this establishment?" }, class: "btn btn-primary btn-sm" %></p>
+      <% end %>
     </div>
   </div>  
 </div>

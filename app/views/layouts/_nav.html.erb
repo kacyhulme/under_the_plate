@@ -15,14 +15,14 @@
         <%= form_tag(establishments_path, method: "get") do %>
         <div class="form-group">
           <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %></div>
-          <%= submit_tag "Search", :name => nil, class: "btn btn-primary" %>
+          <%= submit_tag "Search", :name => nil, class: "btn btn-primary btn-sm" %>
         <% end %>
       </div>
       
       <form class="navbar-form navbar-right" role="search">
-        Hi, <%= link_to current_user.name, current_user %>!
-        <button class="btn btn-default"><%= link_to "Account Settings", edit_user_path(current_user) %></button>
-        <button class="btn btn-default"><%= link_to "Sign Out", session_path, method: :delete %></button>
+        Logged in as <%= link_to current_user.name, current_user %>!
+        <button class="btn btn-default btn-sm"><%= link_to "Account Settings", edit_user_path(current_user) %></button>
+        <button class="btn btn-default btn-sm"><%= link_to "Sign Out", session_path, method: :delete %></button>
       </form>
     </div>
   </div>
