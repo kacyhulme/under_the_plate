@@ -13,7 +13,7 @@ class Establishment < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: true
 	validates :address_id, :owner_id, :distributor_id, presence: true, allow_blank: true
 
-	scope :newest, -> { where('created_at < ?', Time.now).order(:name).limit(25)}
+	scope :recent, -> { where('created_at < ?', Time.now).order(:name).limit(3)}
 	
   def self.search(search)
   	where("LOWER(name) LIKE ?", "%#{search}%")
