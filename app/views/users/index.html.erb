@@ -1,14 +1,21 @@
-<h1><%= pluralize(@users.size, 'User') %></h1>
+<h1>We have <%= pluralize(@users.size, 'User') %></h1>
+<div class="container"> 
+	<div class="row"> 
+  	<div class="col-md-3">
+			<p><%= link_to "Admin Users", filtered_users_path(:admin), class: "btn btn-default btn-sm"  %></p>
+			<p><%= link_to "Non-admin Users", filtered_users_path(:non_admin), class: "btn btn-default btn-sm"  %></p>
+			<p><%= link_to "Add New User", new_user_path, class: "btn btn-primary btn-sm"  %></p>
+		</div>
 
-<%= link_to "Admin Users", filtered_users_path(:admin), class: "btn btn-primary"  %>
-<%= link_to "Non-admin Users", filtered_users_path(:non_admin), class: "btn btn-primary"  %>
+  	<div class="col-md-9">
+			<ul>
+				<% @users.each do |user| %>
+				<li>
+					<%= link_to user.name, user %>
+				</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
 
-<ul>
-	<% @users.each do |user| %>
-	<li>
-		<%= link_to user.name, user %>
-	</li>
-	<% end %>
-</ul>
-
-<%= link_to "Add New User", new_user_path, class: "btn btn-primary"  %>

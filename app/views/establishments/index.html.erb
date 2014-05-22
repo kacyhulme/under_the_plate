@@ -1,19 +1,20 @@
 <p>There are <%= pluralize(@establishments.size, 'establishment') %></p>
 <nav>
- <%= link_to 'Add a New Establishment', new_establishment_path %>
+ <%= link_to 'Add a New Establishment', new_establishment_path, class: "btn btn-primary btn-sm" %>
 </nav>
-
+<br>
 <% if @establishments.any? %>
 <div class="container"> 
   <div class="row"> 
     <% @establishments.each do |establishment| %> 
       <div class="col-md-3">
         <div class="thumbnail">
-          <div>Name <%= link_to establishment.name, establishment %></div>
-          <div>Address <%= establishment.address_id %></div>
-          <div>Owner <%= establishment.owner_id %></div>
-          <div>Distributor <%= establishment.distributor_id %></div>
-          <div>Details <%= link_to 'More Details', establishment %></div> 
+          <h1><%= link_to establishment.name, establishment %></h1>
+          <div><%= establishment.addresses.count %> Location in</div>
+          <% establishment.addresses.each do |a| %>
+          <div><%= a.city %></div>
+          <% end %>
+          <div><%= link_to 'More Details', establishment %></div> 
         </div>  
       </div>
     <% end %>
