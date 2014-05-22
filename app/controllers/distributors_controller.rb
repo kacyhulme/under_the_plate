@@ -42,7 +42,7 @@ class DistributorsController < ApplicationController
 
 private
 	def set_distributor
-		@distributor = Distributor.find_by!(params[:slug])
+		@distributor = Distributor.friendly.find(params[:id])
 	end
 
 	def distributor_params

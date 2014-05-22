@@ -49,7 +49,7 @@ class EstablishmentsController < ApplicationController
 
 private
 	def set_establishment
-		@establishment = Establishment.find_by!(params[:slug])
+		@establishment = Establishment.friendly.find(params[:id])
 	end
 
 	def establishment_params
