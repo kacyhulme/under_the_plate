@@ -1,13 +1,7 @@
-<h1>We have <%= pluralize(@users.size, 'User') %></h1>
 <div class="container"> 
 	<div class="row"> 
-  	<div class="col-md-3">
-			<p><%= link_to "Admin Users", filtered_users_path(:admin), class: "btn btn-default btn-sm"  %></p>
-			<p><%= link_to "Non-admin Users", filtered_users_path(:non_admin), class: "btn btn-default btn-sm"  %></p>
-			<p><%= link_to "Add New User", new_user_path, class: "btn btn-primary btn-sm"  %></p>
-		</div>
-
-  	<div class="col-md-9">
+  	<div class="col-md-6">
+			<h1>We have <%= pluralize(@users.size, 'User') %></h1>
 			<ul>
 				<% @users.each do |user| %>
 				<li>
@@ -15,6 +9,14 @@
 				</li>
 				<% end %>
 			</ul>
+		</div>
+
+  	<div class="col-md-6">
+  		<h1></h1>
+			<p><%= link_to "Admin Users", filtered_users_path(:admin), class: "btn btn-default btn-sm"  %></p>
+			<p><%= link_to "Non-admin Users", filtered_users_path(:non_admin), class: "btn btn-default btn-sm"  %></p>
+			<p><%= link_to "Add New User", new_user_path, class: "btn btn-primary btn-sm"  %></p>
+
 		</div>
 	</div>
 </div>

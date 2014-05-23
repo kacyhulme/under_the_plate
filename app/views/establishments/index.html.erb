@@ -1,8 +1,15 @@
-<p>There are <%= pluralize(@establishments.size, 'establishment') %></p>
-<nav>
- <%= link_to 'Add a New Establishment', new_establishment_path, class: "btn btn-primary btn-sm" %>
-</nav>
-<br>
+<div class="container"> 
+  <div class="row"> 
+    <div class="col-md-12">
+      <p>There are <%= pluralize(@establishments.size, 'establishment') %></p>
+        <nav>
+         <%= link_to 'Add a New Establishment', new_establishment_path, class: "btn btn-primary btn-sm" %>
+        </nav>
+        <br>
+    </div>
+  </div>
+</div>
+
 <% if @establishments.any? %>
 <div class="container"> 
   <div class="row"> 
@@ -10,10 +17,9 @@
       <div class="col-md-3">
         <div class="thumbnail">
           <h1><%= link_to establishment.name, establishment %></h1>
-          <div><%= establishment.addresses.count %> Location in </div>
+          <div><%= pluralize(establishment.addresses.count, 'location') %></div>
           <% establishment.addresses.each do |a| %>
-          <%= a.city %>
-          <div><%= a.address_display_name %></div>
+          <div><%= a.city %> : <%= a.address_display_name %></div>
           <% end %>
           <div><%= link_to 'More Details', establishment %></div> 
         </div>  
