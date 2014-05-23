@@ -10,18 +10,12 @@ Rails.application.routes.draw do
   resources :food_groups
   resources :cuisines
 
-  resources :owners do 
-    resources :addresses
-  end
-
   resources :distributors do
     resources :addresses
-    resources :owners
   end
 
   resources :establishments do
     resources :addresses
-    resources :owners
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

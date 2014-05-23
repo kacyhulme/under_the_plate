@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520213130) do
+ActiveRecord::Schema.define(version: 20140523142853) do
 
   create_table "addresses", force: true do |t|
     t.string   "addressable_type"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20140520213130) do
 
   create_table "distributors", force: true do |t|
     t.integer  "address_id"
-    t.integer  "owner_id"
     t.integer  "food_group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -60,16 +59,15 @@ ActiveRecord::Schema.define(version: 20140520213130) do
   create_table "establishments", force: true do |t|
     t.string   "name"
     t.integer  "address_id"
-    t.integer  "owner_id"
     t.integer  "distributor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "owner"
   end
 
   add_index "establishments", ["address_id"], name: "index_establishments_on_address_id"
   add_index "establishments", ["distributor_id"], name: "index_establishments_on_distributor_id"
-  add_index "establishments", ["owner_id"], name: "index_establishments_on_owner_id"
   add_index "establishments", ["slug"], name: "index_establishments_on_slug"
 
   create_table "food_group_categorizations", force: true do |t|
@@ -100,18 +98,6 @@ ActiveRecord::Schema.define(version: 20140520213130) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
-
-  create_table "owners", force: true do |t|
-    t.string   "name"
-    t.string   "company"
-    t.integer  "ownership_id"
-    t.string   "ownership_type"
-    t.integer  "address_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "owners", ["ownership_type", "ownership_id"], name: "index_owners_on_ownership_type_and_ownership_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

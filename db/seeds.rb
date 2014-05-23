@@ -113,31 +113,36 @@ Establishment.create!([
     name: 'Zocalo',
     address_id: 1,
     owner_id: 1,
-    distributor_id: 1
+    distributor_id: 1,
+    owner: "Mark Windsor"
     },
   {
     name: 'Bouldin Creek Cafe',
     address_id: 4,
     owner_id: 1,
-    distributor_id: 1
+    distributor_id: 1,
+    owner: "Chris Matthews"
     },
   {
     name: 'Galaxy',
     address_id: 4,
     owner_id: 1,
-    distributor_id: 1
+    distributor_id: 1,
+    owner: "Selena Montgomery"
     },
   {
     name: 'Sushi Zushi',
     address_id: 4,
     owner_id: 1,
-    distributor_id: 1
+    distributor_id: 1,
+    owner: "Xavier Banham"
     },
   {
     name: 'Odd Duck',
     address_id: 7,
     owner_id: 1,
-    distributor_id: 1
+    distributor_id: 1,
+    owner: "Tom Jones"
     }    
 ])
 
@@ -178,51 +183,6 @@ Distributor.create!([
     food_group_id: 1,
     name: "Maggie's Farm" 
     }    
-])
-
-Owner.create! ([
-  {
-    name: "Sam Brown",
-    company: "Sam Brown, Inc",
-    ownership_id: 1,
-    ownership_type: "distributor",
-    address_id: 2
-    },
-  {
-    name: "Bob Santos",
-    company: "Bob Santos, Inc",
-    ownership_id: 2,
-    ownership_type: "distributor",
-    address_id: 5
-    },
-  {
-    name: "Chris Mulligan",
-    company: "Chris Mulligan, Inc",
-    ownership_id: 3,
-    ownership_type: "distributor",
-    address_id: 8
-    },      
-  {
-    name: "Sally Forthright",
-    company: "Sally Loves Food, Inc",
-    ownership_id: 4,
-    ownership_type: "establishment",
-    address_id: 1
-    },
-  {
-    name: "Christine Falconer",
-    company: "Falconer and Family, Inc",
-    ownership_id: 5,
-    ownership_type: "establishment",
-    address_id: 4
-    },
-  {
-    name: "Herbert Martin",
-    company: "Martin and Company, Inc",
-    ownership_id: 6,
-    ownership_type: "establishment",
-    address_id: 7
-    }            
 ])
 
 Cuisine.create!([

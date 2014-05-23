@@ -3,7 +3,6 @@ class Establishment < ActiveRecord::Base
 	extend FriendlyId
   friendly_id :name, use: :slugged
 		
-	has_many :owners, as: :ownerships
 	has_many :addresses, as: :addressable
 	has_many :distributors
 	has_many :cuisine_categorizations

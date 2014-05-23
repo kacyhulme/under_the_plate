@@ -29,7 +29,7 @@ private
 	end
 
 	def load_addressable
-		klass = [Establishment, Distributor, Owner].detect { |c| params["#{c.name.underscore}_id"]}
+		klass = [Establishment, Distributor].detect { |c| params["#{c.name.underscore}_id"]}
 		@addressable = klass.find_by(params["slug"])
 	end
 end
