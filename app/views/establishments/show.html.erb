@@ -19,10 +19,10 @@
     </div>
 
     <div class="col-md-3">
-      <h3> Owner </h3> 
-        <div><%= @establishment.owner_id %></div>
-      <h3> Distributor </h3>
-        <div><%= @establishment.distributor_id %></div>
+      <h3> Distributors </h3>
+        <div><% @distributions.each do |d| %></div>
+        <%= d.distributor.name %>
+        <% end %>
       <h3> Cuisine </h3>
         <% @cuisines.each do |cuisine| %>
           <div><%= cuisine.name %></div>
