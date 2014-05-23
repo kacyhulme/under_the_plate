@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523142853) do
+ActiveRecord::Schema.define(version: 20140523202313) do
 
   create_table "addresses", force: true do |t|
     t.string   "addressable_type"
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 20140523142853) do
     t.datetime "updated_at"
   end
 
+  create_table "distributions", force: true do |t|
+    t.integer  "establishment_id"
+    t.integer  "distributor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "distributions", ["distributor_id"], name: "index_distributions_on_distributor_id"
+  add_index "distributions", ["establishment_id"], name: "index_distributions_on_establishment_id"
+
   create_table "distributors", force: true do |t|
     t.integer  "address_id"
     t.integer  "food_group_id"
@@ -59,7 +69,6 @@ ActiveRecord::Schema.define(version: 20140523142853) do
   create_table "establishments", force: true do |t|
     t.string   "name"
     t.integer  "address_id"
-    t.integer  "distributor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
@@ -67,7 +76,6 @@ ActiveRecord::Schema.define(version: 20140523142853) do
   end
 
   add_index "establishments", ["address_id"], name: "index_establishments_on_address_id"
-  add_index "establishments", ["distributor_id"], name: "index_establishments_on_distributor_id"
   add_index "establishments", ["slug"], name: "index_establishments_on_slug"
 
   create_table "food_group_categorizations", force: true do |t|
