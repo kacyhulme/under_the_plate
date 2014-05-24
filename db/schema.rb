@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523202313) do
+ActiveRecord::Schema.define(version: 20140523201918) do
 
   create_table "addresses", force: true do |t|
     t.string   "addressable_type"
@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 20140523202313) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
+    t.string   "phone"
     t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "phone"
   end
 
   add_index "addresses", ["addressable_id", "addressable_type"], name: "index_addresses_on_addressable_id_and_addressable_type"
@@ -56,23 +56,24 @@ ActiveRecord::Schema.define(version: 20140523202313) do
   add_index "distributions", ["establishment_id"], name: "index_distributions_on_establishment_id"
 
   create_table "distributors", force: true do |t|
+    t.string   "name"
     t.integer  "address_id"
     t.integer  "food_group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
     t.string   "slug"
   end
 
+  add_index "distributors", ["address_id"], name: "index_distributors_on_address_id"
   add_index "distributors", ["slug"], name: "index_distributors_on_slug"
 
   create_table "establishments", force: true do |t|
     t.string   "name"
     t.integer  "address_id"
+    t.string   "owner"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
-    t.string   "owner"
   end
 
   add_index "establishments", ["address_id"], name: "index_establishments_on_address_id"
