@@ -6,183 +6,81 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Address.create!([
-	{
-    addressable_type: "establishment",
-    addressable_id: 1,
-    street_number: "1110",
-    street_name: "W Lynn St",
-    city: "Austin",
-    state: "Texas",
-    zip: "78703",
-    phone: "5124728226",
-    website: "www.zocalocafe.com"
-		},
-  {
-    addressable_type: "distributor",
-    addressable_id: 2,
-    street_number: "7000",
-    street_name: "Industrial Ln",
-    city: "Dallas",
-    state: "Texas",
-    zip: "75211",
-    phone: "2145558733",
-    website: "www.foodmanufacturers.com" 
-  },
-  {
-    addressable_type: "owner",
-    addressable_id: 3,
-    street_number: "34",
-    street_name: "Bridgepark Way",
-    city: "Dallas",
-    state: "Texas",
-    zip: "75210",
-    phone: "2145553442",
-    website: "www.sambrowninc.com" 
-  },
-{
-    addressable_type: "establishment",
-    addressable_id: 4,
-    street_number: "1900",
-    street_name: "South 1st Street",
-    city: "Austin",
-    state: "Texas",
-    zip: "78704",
-    phone: "5124161601",
-    website: "www.bouldincreek.com"
-    },
-  {
-    addressable_type: "distributor",
-    addressable_id: 5,
-    street_number: "650",
-    street_name: "Ocean Pass Drive",
-    city: "Santa Barbara",
-    state: "California",
-    zip: "93101",
-    phone: "8055558900",
-    website: "www.organicfoodmerchants.com" 
-  },
-  {
-    addressable_type: "owner",
-    addressable_id: 6,
-    street_number: "34",
-    street_name: "Bridgepark Way",
-    city: "Dallas",
-    state: "Texas",
-    zip: "75210",
-    phone: "2145553442",
-    website: "www.sambrowninc.com" 
-  },
-{
-    addressable_type: "establishment",
-    addressable_id: 7,
-    street_number: "1201",
-    street_name: "S Lamar Blvd",
-    city: "Austin",
-    state: "Texas",
-    zip: "78704",
-    phone: "5124336521",
-    website: "www.oddduckaustin.com"
-    },
-  {
-    addressable_type: "distributor",
-    addressable_id: 8,
-    street_number: "5600",
-    street_name: "Orange Grove Ln",
-    city: "Oxnard",
-    state: "California",
-    zip: "93030",
-    phone: "2135552222",
-    website: "www.maggiesfarm.com" 
-  },
-  {
-    addressable_type: "owner",
-    addressable_id: 9,
-    street_number: "34",
-    street_name: "Bridgepark Way",
-    city: "Dallas",
-    state: "Texas",
-    zip: "75210",
-    phone: "2145553442",
-    website: "www.sambrowninc.com" 
-  }  
-])
-
 Establishment.create!([
   {
     name: 'Zocalo',
-    address_id: 1,
-    owner_id: 1,
-    distributor_id: 1,
     owner: "Mark Windsor"
     },
   {
     name: 'Bouldin Creek Cafe',
-    address_id: 4,
-    owner_id: 1,
-    distributor_id: 1,
     owner: "Chris Matthews"
     },
   {
     name: 'Galaxy',
-    address_id: 4,
-    owner_id: 1,
-    distributor_id: 1,
     owner: "Selena Montgomery"
     },
   {
     name: 'Sushi Zushi',
-    address_id: 4,
-    owner_id: 1,
-    distributor_id: 1,
     owner: "Xavier Banham"
     },
   {
     name: 'Odd Duck',
-    address_id: 7,
-    owner_id: 1,
-    distributor_id: 1,
     owner: "Tom Jones"
-    }    
+    },
+  {
+    name: 'Home Slice Pizza',
+    owner: "Homie Slice Man"
+    }        
 ])
 
 Distributor.create!([
   {
-    address_id: 2,
-    owner_id: 4,
     food_group_id: 1,
     name: "Food Manufacturers" 
     },
  {
-    address_id: 5,
-    owner_id: 5,
-    food_group_id: 1,
+    food_group_id: 2,
     name: "US Foods" 
     },
  {   
-    address_id: 5,
-    owner_id: 5,
-    food_group_id: 1,
+    food_group_id: 3,
     name: "Good Food Delivery Distribution Services" 
     },
  {   
-    address_id: 5,
-    owner_id: 5,
-    food_group_id: 1,
+    food_group_id: 4,
     name: "Legumes Organic" 
     },
  {   
-    address_id: 5,
-    owner_id: 5,
-    food_group_id: 1,
+    food_group_id: 5,
     name: "Organic Food Merchants" 
     },
  {
-    address_id: 8,
-    owner_id: 6,
-    food_group_id: 1,
+    food_group_id: 6,
     name: "Maggie's Farm" 
     }    
+])
+
+Distribution.create!([
+ {
+    establishment_id: 1,
+    distributor_id: 5
+    },
+ {
+    establishment_id: 2,
+    distributor_id: 4
+    },
+     {
+    establishment_id: 3,
+    distributor_id: 3
+    },
+     {
+    establishment_id: 4,
+    distributor_id: 2
+    },
+     {
+    establishment_id: 5,
+    distributor_id: 1
+    }
 ])
 
 Cuisine.create!([
@@ -252,14 +150,103 @@ User.create! ([
 CuisineCategorization.create! ([
   {
     establishment_id: 1,
-    cuisine_id: 9
+    cuisine_id: 6
+    },
+  {
+    establishment_id: 2,
+    cuisine_id: 3
+    },
+  {
+    establishment_id: 3,
+    cuisine_id: 4
     },
   {
     establishment_id: 4,
-    cuisine_id: 9
-    },
+    cuisine_id: 7
+    },  
   {
-    establishment_id: 7,
-    cuisine_id: 9
+    establishment_id: 5,
+    cuisine_id: 2
     }
 ])
+
+FoodGroup.create! ([
+  {
+    name: "Produce"
+  },
+  {
+    name: "Dairy"
+  },
+    {
+    name: "Meat"
+  },
+    {
+    name: "Fish"
+  },
+    {
+    name: "Cheese"
+  },
+    {
+    name: "Grain"
+  },
+    {
+    name: "Paper Products"
+  }
+])
+
+FoodGroupCategorization.create! ([
+  {
+    distributor_id: 1,
+    food_group_id: 6
+  },
+    {
+    distributor_id: 2,
+    food_group_id: 5
+  },
+    {
+    distributor_id: 3,
+    food_group_id: 4
+  },
+    {
+    distributor_id: 4,
+    food_group_id: 3
+  },
+    {
+    distributor_id: 5,
+    food_group_id: 2
+  },
+  {
+    distributor_id: 6,
+    food_group_id: 1
+  }
+])
+
+e1 = Establishment.find(1)
+e2 = Establishment.find(2)
+e3 = Establishment.find(3)
+e4 = Establishment.find(4)
+e5 = Establishment.find(5)
+e6 = Establishment.find(5)
+
+a = e1.addresses.create!(street_number: "45", street_name: "Crawford", city: "Austin", state: "Texas", zip: "78704", phone: "5129990564", website: "www.makemefood.com")
+a = e2.addresses.create!(street_number: "344", street_name: "Menlow Drive", city: "Austin", state: "Texas", zip: "78705", phone: "5125559000", website: "www.foodisfun.com")
+a = e3.addresses.create!(street_number: "67888", street_name: "Nexus St", city: "Austin", state: "Texas", zip: "78702", phone: "5124508900", website: "www.website.com")
+a = e4.addresses.create!(street_number: "10", street_name: "Montgomery St", city: "Austin", state: "Texas", zip: "78708", phone: "5123402222", website: "www.ilovetoeat.com")
+a = e5.addresses.create!(street_number: "23", street_name: "Bellingham", city: "Austin", state: "Texas", zip: "78709", phone: "5122106500", website: "www.iamsohungry.com")
+a = e6.addresses.create!(street_number: "2999", street_name: "Sinclair Rd", city: "Austin", state: "Texas", zip: "78729", phone: "5123909888", website: "www.wannaeatnow.com")
+
+
+d1 = Distributor.find(1)
+d2 = Distributor.find(2)
+d3 = Distributor.find(3)
+d4 = Distributor.find(4)
+d5 = Distributor.find(5)
+d6 = Distributor.find(6)
+
+a = d1.addresses.create!(street_number: "5433", street_name: "Marilyn St", city: "Austin", state: "Texas", zip: "78724", phone: "5124330000", website: "www.distributors.com")
+a = d2.addresses.create!(street_number: "888", street_name: "Campbell Ln", city: "Austin", state: "Texas", zip: "78735", phone: "5124562348", website: "www.gettinfoodoutthere.com")
+a = d3.addresses.create!(street_number: "21", street_name: "Winslow Ave", city: "Austin", state: "Texas", zip: "78704", phone: "5126780033", website: "www.makinfood.com")
+a = d4.addresses.create!(street_number: "4321", street_name: "Navigation Rd", city: "Austin", state: "Texas", zip: "78706", phone: "5123338888", website: "www.gitfoodtoyou.com")
+a = d5.addresses.create!(street_number: "9000", street_name: "Whitestone", city: "Austin", state: "Texas", zip: "78710", phone: "5129996700", website: "www.wedeliverfood.com")
+a = d6.addresses.create!(street_number: "8900", street_name: "Old Farm Rd", city: "Austin", state: "Texas", zip: "78730", phone: "512777300", website: "www.foodeliver.com")
+
