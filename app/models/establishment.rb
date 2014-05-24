@@ -10,7 +10,7 @@ class Establishment < ActiveRecord::Base
 	
 	validates :slug, uniqueness: true
 	validates :name, presence: true, uniqueness: true
-	validates :address_id, :owner_id, :distributor_id, presence: true, allow_blank: true
+	validates :address_id, presence: true, allow_blank: true
 
 	scope :recent, -> { where('created_at < ?', Time.now).order(:name).limit(3)}
 	

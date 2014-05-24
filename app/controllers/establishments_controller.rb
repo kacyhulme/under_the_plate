@@ -16,6 +16,7 @@ class EstablishmentsController < ApplicationController
 		@addressable = @establishment
 		@addresses = @addressable.addresses
 		@address = Address.new
+		@distributions = @establishment.distributions
 	end
 
 	def new
@@ -53,6 +54,6 @@ private
 	end
 
 	def establishment_params
-    params.require(:establishment).permit(:name, :address_id, :owner_id, :distributor_id, :cuisine)
+    params.require(:establishment).permit(:name, :address_id, :owner, :distributor_id, :cuisine)
   end
 end

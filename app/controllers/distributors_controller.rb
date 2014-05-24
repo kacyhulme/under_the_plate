@@ -46,6 +46,6 @@ private
 	end
 
 	def distributor_params
-    params.require(:distributor).permit(:name, :address_id, :owner_id, :food_group_id, :name)
+    params.require(:distributor).permit(:name, :address_id, :food_group_id, :name)
   end
 end

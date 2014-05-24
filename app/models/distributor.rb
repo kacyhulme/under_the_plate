@@ -9,5 +9,6 @@ class Distributor < ActiveRecord::Base
 	has_many :food_group_categorizations, dependent: :destroy
 
 	validates :name, :food_group_id, presence: true
+	validates :address_id, presence: true, allow_blank: true
 
 end
