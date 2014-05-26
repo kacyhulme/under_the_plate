@@ -4,6 +4,7 @@ class EstablishmentsController < ApplicationController
 	before_action :set_establishment, only: [:show, :edit, :update, :destroy]
 
 	def index
+    flash[:alert] = "Click on an establishment below to see what ingredients they use, what certifications they have and any special practices they follow that make their food and their service exceptional!"
 		if params[:search]
 			@establishments = Establishment.search(params[:search].downcase).order("created_at ASC")
 		else
