@@ -3,7 +3,6 @@
   <head>
 		<title><%= page_title %></title>
 	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,19 +14,18 @@
   
   <div class="container">
     <div>
-    <% if flash[:notice] %>
-      <div class="alert alert-info">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-  </div>
+      <% if flash[:notice] %>
+        <div class="alert alert-info">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
-</div>
+  </div>
 
   <%= content_for(:app) %>
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+  
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </body>
 
   <%= render 'shared/footer' %>
