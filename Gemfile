@@ -4,15 +4,16 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
+
+gem 'pg'
+
 group :development, :test do
-	gem 'sqlite3'
 	gem 'pry-rails'
 	gem 'quiet_assets'
 	gem 'debugger'
 end
 
 group :production do
-	gem 'pg'
 	gem 'rails_12factor'
 end
 
