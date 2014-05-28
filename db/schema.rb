@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523201918) do
+ActiveRecord::Schema.define(version: 20140527221127) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "addresses", force: true do |t|
     t.string   "addressable_type"
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140523201918) do
     t.datetime "updated_at"
   end
 
-  add_index "addresses", ["addressable_id", "addressable_type"], name: "index_addresses_on_addressable_id_and_addressable_type"
+  add_index "addresses", ["addressable_id", "addressable_type"], name: "index_addresses_on_addressable_id_and_addressable_type", using: :btree
 
   create_table "cuisine_categorizations", force: true do |t|
     t.integer  "establishment_id"
@@ -36,8 +39,8 @@ ActiveRecord::Schema.define(version: 20140523201918) do
     t.datetime "updated_at"
   end
 
-  add_index "cuisine_categorizations", ["cuisine_id"], name: "index_cuisine_categorizations_on_cuisine_id"
-  add_index "cuisine_categorizations", ["establishment_id"], name: "index_cuisine_categorizations_on_establishment_id"
+  add_index "cuisine_categorizations", ["cuisine_id"], name: "index_cuisine_categorizations_on_cuisine_id", using: :btree
+  add_index "cuisine_categorizations", ["establishment_id"], name: "index_cuisine_categorizations_on_establishment_id", using: :btree
 
   create_table "cuisines", force: true do |t|
     t.string   "name"
@@ -52,8 +55,8 @@ ActiveRecord::Schema.define(version: 20140523201918) do
     t.datetime "updated_at"
   end
 
-  add_index "distributions", ["distributor_id"], name: "index_distributions_on_distributor_id"
-  add_index "distributions", ["establishment_id"], name: "index_distributions_on_establishment_id"
+  add_index "distributions", ["distributor_id"], name: "index_distributions_on_distributor_id", using: :btree
+  add_index "distributions", ["establishment_id"], name: "index_distributions_on_establishment_id", using: :btree
 
   create_table "distributors", force: true do |t|
     t.string   "name"
@@ -64,8 +67,8 @@ ActiveRecord::Schema.define(version: 20140523201918) do
     t.string   "slug"
   end
 
-  add_index "distributors", ["address_id"], name: "index_distributors_on_address_id"
-  add_index "distributors", ["slug"], name: "index_distributors_on_slug"
+  add_index "distributors", ["address_id"], name: "index_distributors_on_address_id", using: :btree
+  add_index "distributors", ["slug"], name: "index_distributors_on_slug", using: :btree
 
   create_table "establishments", force: true do |t|
     t.string   "name"
@@ -76,8 +79,8 @@ ActiveRecord::Schema.define(version: 20140523201918) do
     t.string   "slug"
   end
 
-  add_index "establishments", ["address_id"], name: "index_establishments_on_address_id"
-  add_index "establishments", ["slug"], name: "index_establishments_on_slug"
+  add_index "establishments", ["address_id"], name: "index_establishments_on_address_id", using: :btree
+  add_index "establishments", ["slug"], name: "index_establishments_on_slug", using: :btree
 
   create_table "food_group_categorizations", force: true do |t|
     t.integer  "distributor_id"
@@ -86,8 +89,8 @@ ActiveRecord::Schema.define(version: 20140523201918) do
     t.datetime "updated_at"
   end
 
-  add_index "food_group_categorizations", ["distributor_id"], name: "index_food_group_categorizations_on_distributor_id"
-  add_index "food_group_categorizations", ["food_group_id"], name: "index_food_group_categorizations_on_food_group_id"
+  add_index "food_group_categorizations", ["distributor_id"], name: "index_food_group_categorizations_on_distributor_id", using: :btree
+  add_index "food_group_categorizations", ["food_group_id"], name: "index_food_group_categorizations_on_food_group_id", using: :btree
 
   create_table "food_groups", force: true do |t|
     t.string   "name"
@@ -103,10 +106,27 @@ ActiveRecord::Schema.define(version: 20140523201918) do
     t.datetime "created_at"
   end
 
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "qualification_statuses", force: true do |t|
+    t.boolean  "status"
+    t.integer  "establishment_id"
+    t.integer  "qualification_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "qualification_statuses", ["establishment_id"], name: "index_qualification_statuses_on_establishment_id", using: :btree
+  add_index "qualification_statuses", ["qualification_id"], name: "index_qualification_statuses_on_qualification_id", using: :btree
+
+  create_table "qualifications", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
