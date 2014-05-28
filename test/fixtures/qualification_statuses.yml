@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: false
+  establishment_id: 
+  qualification_id: 
+
+two:
+  status: false
+  establishment_id: 
+  qualification_id: 

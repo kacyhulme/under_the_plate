@@ -7,7 +7,9 @@ class Establishment < ActiveRecord::Base
 	has_many :distributions
 	has_many :cuisine_categorizations
 	has_many :cuisines, through: :cuisine_categorizations
-	
+	has_many :qualification_statuses
+	has_many :qualifications, through: :qualification_statuses
+
 	validates :slug, uniqueness: true
 	validates :name, presence: true, uniqueness: true
 	validates :address_id, presence: true, allow_blank: true

@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   
-  resources :distributions
+  resources :qualification_statuses
+
+  resources :qualifications
 
   get 'welcome' => 'welcome#index'
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
   get 'users/filter/:scope' => "users#index", as: :filtered_users 
 
+  resources :distributions
   resource :session
   resources :users
   resources :food_groups

@@ -1,0 +1,2 @@
+class QualificationStatusesController < ApplicationController
+end

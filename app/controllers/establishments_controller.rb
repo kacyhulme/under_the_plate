@@ -18,6 +18,7 @@ class EstablishmentsController < ApplicationController
 		@addresses = @addressable.addresses
 		@address = Address.new
 		@distributions = @establishment.distributions
+		@qualifications = @establishment.qualifications
 	end
 
 	def new
