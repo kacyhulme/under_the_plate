@@ -19,16 +19,19 @@
     <div class="col-md-3">
       <h3> Distributors </h3>
         <div><% @distributions.each do |d| %></div>
-        <%= d.distributor.name %>
+        <p><%= d.distributor.name %></p>
         <% end %>
       <h3> Cuisine </h3>
         <% @cuisines.each do |cuisine| %>
-          <div><%= cuisine.name %></div>
+          <p><%= cuisine.name %></p>
         <% end %>
     </div>
     
     <div class="col-md-3">
-      <h3> Certifications </h3>
+      <h3> Qualifications </h3>
+        <% @qualifications.each do |q| %>
+          <p><%= q.name %></p>
+          <% end %>
       <h3> Special Items </h3>
     </div>
 
