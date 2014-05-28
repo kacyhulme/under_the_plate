@@ -216,11 +216,100 @@ FoodGroupCategorization.create! ([
     food_group_id: 2
   },
   {
+    distributor_id: 1,
+    food_group_id: 4
+  },
+    {
+    distributor_id: 2,
+    food_group_id: 3
+  },
+    {
+    distributor_id: 3,
+    food_group_id: 4
+  },
+    {
+    distributor_id: 4,
+    food_group_id: 2
+  },
+    {
+    distributor_id: 5,
+    food_group_id: 6
+  },
+  {
     distributor_id: 6,
-    food_group_id: 1
+    food_group_id: 5
   }
 ])
 
+Qualification.create! ([
+  {
+    name: "Green"
+  },
+  {
+    name: "Vegetarian-friendly"
+  },
+    {
+    name: "Vegan-friendly"
+  },
+    {
+    name: "Allergy-friendly"
+  },
+    {
+    name: "Recycles"
+  },
+    {
+    name: "Gluten-free"
+  },
+    {
+    name: "Kosher"
+  }
+])
+QualificationStatus.create! ([
+  {
+    establishment_id: 1,
+    qualification_id: 7
+  },
+  {
+    establishment_id: 2,
+    qualification_id: 6
+  },
+    {
+    establishment_id: 3,
+    qualification_id: 5
+  },
+    {
+    establishment_id: 4,
+    qualification_id: 4
+  },
+    {
+    establishment_id: 5,
+    qualification_id: 3
+  },
+    {
+    establishment_id: 6,
+    qualification_id: 2
+  },
+    {
+    establishment_id: 6,
+    qualification_id: 1
+  },
+    {
+    establishment_id: 5,
+    qualification_id: 7
+  },
+    {
+    establishment_id: 4,
+    qualification_id: 6
+  },
+    {
+    establishment_id: 3,
+    qualification_id: 5
+  },
+    {
+    establishment_id: 2,
+    qualification_id: 4
+  }
+])
 e1 = Establishment.find(1)
 e2 = Establishment.find(2)
 e3 = Establishment.find(3)
