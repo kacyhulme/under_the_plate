@@ -11,6 +11,7 @@ group :development, :test do
 	gem 'pry-rails'
 	gem 'quiet_assets'
 	gem 'debugger'
+	gem 'rspec-rails','~> 3.0.0'
 end
 
 group :production do
