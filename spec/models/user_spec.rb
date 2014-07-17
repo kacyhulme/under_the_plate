@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "A User" do 
+describe "A user" do 
 	it "requires an email" do 
 		user = User.new(email: "")
 
@@ -8,5 +8,10 @@ describe "A User" do
 		expect(user.errors[:email].any?).to be_true
 	end
 
-	it "requires a user password" 
+	it "requires a password" do
+		user = User.new(password:"")
+
+		expect(user.valid?).to be_false
+		expect(user.errors[:password].any?).to be_tur
+	end
 end 

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
 		<title><%= page_title %></title>
-	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= stylesheet_link_tag    "application", media: "all" %>
 	  <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,7 @@
 
   <%= content_for(:app) %>
   
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application" %>
   </body>
 
   <%= render 'shared/footer' %>
