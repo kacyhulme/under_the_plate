@@ -23,13 +23,10 @@ class AddressesController < ApplicationController
 private
 
 	def load_addressable
-		# @addressable = Establishment.find(params[:establishment_id])
-		# resource, slug = request.path.split('/')[1, 2] #/establishments/1
-		# @addressable = resource.singularize.classify.constantize.find_by("slug") #Establishment.find(1)
-	end
-
-	def load_addressable
 		klass = [Establishment, Distributor].detect { |c| params["#{c.name.underscore}_id"]}
 		@addressable = klass.find_by(params["slug"])
 	end
+
+	def address_params
+		params.require(:address).permit(:address, :latitude, :longitude)
 end

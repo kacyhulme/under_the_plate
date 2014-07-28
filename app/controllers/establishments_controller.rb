@@ -10,7 +10,7 @@ class EstablishmentsController < ApplicationController
 		else
 			@establishments = Establishment.all.limit(25)
 		end
-		render json: @establishments
+		# render json: @establishments
 	end
 
 	def show
