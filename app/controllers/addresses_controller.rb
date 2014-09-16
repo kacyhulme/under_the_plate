@@ -29,4 +29,5 @@ private
 
 	def address_params
 		params.require(:address).permit(:address, :latitude, :longitude)
+	end
 end
