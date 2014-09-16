@@ -13,7 +13,7 @@
 
     <div class="form-group">
       <%= f.label :distributor_id %>
-      <%= collection_select :establishment, :distributor_id, Distributor.all, :id, :name, {prompt: "Select a distributor"}, {class: "form-control"}  %>
+      <%= collection_select :distribution, :distributor_id, Distributor.all, :id, :name, {prompt: "Select a distributor"}, {class: "form-control"}  %>
     </div>
 
     <div class="form-group">

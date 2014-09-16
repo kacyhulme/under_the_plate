@@ -8,14 +8,14 @@ gem 'rails', '4.1.1'
 gem 'pg'
 
 group :development, :test do
-	gem 'pry-rails'
-	gem 'quiet_assets'
-	gem 'debugger'
-	gem 'rspec-rails','~> 3.0.0'
+  gem 'pry-rails'
+  gem 'quiet_assets'
+  gem 'debugger'
+  gem 'rspec-rails','~> 3.0.0'
 end
 
 group :production do
-	gem 'rails_12factor'
+  gem 'rails_12factor'
 end
 
 # Use SCSS for stylesheets
