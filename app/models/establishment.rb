@@ -4,7 +4,8 @@ class Establishment < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   has_many :addresses, as: :addressable
-  has_many :distributions, through: :distributors 
+  has_many :distributors, through: :distributions 
+  has_many :distributions
   has_many :cuisine_categorizations
   has_many :cuisines, through: :cuisine_categorizations
   has_many :qualification_statuses

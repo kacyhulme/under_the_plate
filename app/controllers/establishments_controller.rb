@@ -18,7 +18,7 @@ class EstablishmentsController < ApplicationController
     @addressable = @establishment
     @addresses = @addressable.addresses
     @address = Address.new
-    @distributions = @establishment.distributions
+    @distributors = @establishment.distributors
     @qualifications = @establishment.qualifications
   end
 

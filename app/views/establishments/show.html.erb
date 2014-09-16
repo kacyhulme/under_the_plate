@@ -18,8 +18,8 @@
 
     <div class="col-md-3">
       <h3> Distributors </h3>
-        <div><% @distributions.each do |d| %></div>
-        <p><%= d.distributor.name %></p>
+        <div><% @distributors.each do |d| %></div>
+        <p><%= d.name %></p>
         <% end %>
       <h3> Cuisine </h3>
         <% @cuisines.each do |cuisine| %>
