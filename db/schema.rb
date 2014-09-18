@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527221127) do
+ActiveRecord::Schema.define(version: 20140918171407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,9 +28,13 @@ ActiveRecord::Schema.define(version: 20140527221127) do
     t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
   add_index "addresses", ["addressable_id", "addressable_type"], name: "index_addresses_on_addressable_id_and_addressable_type", using: :btree
+  add_index "addresses", ["latitude"], name: "index_addresses_on_latitude", using: :btree
+  add_index "addresses", ["longitude"], name: "index_addresses_on_longitude", using: :btree
 
   create_table "cuisine_categorizations", force: true do |t|
     t.integer  "establishment_id"
