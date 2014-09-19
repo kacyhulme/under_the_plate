@@ -30,34 +30,34 @@ Establishment.create!([
   {
     name: 'Home Slice Pizza',
     owner: "Homie Slice Man"
-    }        
+    }
 ])
 
 Distributor.create!([
   {
     food_group_id: 1,
-    name: "Food Manufacturers" 
+    name: "Food Manufacturers"
     },
  {
     food_group_id: 2,
-    name: "US Foods" 
+    name: "US Foods"
     },
- {   
+ {
     food_group_id: 3,
-    name: "Good Food Delivery Distribution Services" 
+    name: "Good Food Delivery Distribution Services"
     },
- {   
+ {
     food_group_id: 4,
-    name: "Legumes Organic" 
+    name: "Legumes Organic"
     },
- {   
+ {
     food_group_id: 5,
-    name: "Organic Food Merchants" 
+    name: "Organic Food Merchants"
     },
  {
     food_group_id: 6,
-    name: "Maggie's Farm" 
-    }    
+    name: "Maggie's Farm"
+    }
 ])
 
 Distribution.create!([
@@ -113,7 +113,7 @@ Cuisine.create!([
     },
   {
     name: "Coffee Shop"
-    }              
+    }
 ])
 
 User.create! ([
@@ -163,7 +163,7 @@ CuisineCategorization.create! ([
   {
     establishment_id: 4,
     cuisine_id: 7
-    },  
+    },
   {
     establishment_id: 5,
     cuisine_id: 2
@@ -333,9 +333,8 @@ d5 = Distributor.find(5)
 d6 = Distributor.find(6)
 
 a = d1.addresses.create!(street_number: "5433", street_name: "Marilyn St", city: "Austin", state: "Texas", zip: "78724", phone: "5124330000", website: "www.distributors.com")
-a = d2.addresses.create!(street_number: "888", street_name: "Campbell Ln", city: "Austin", state: "Texas", zip: "78735", phone: "5124562348", website: "www.gettinfoodoutthere.com")
+a= d2.addresses.create!(street_number: "888", street_name: "Campbell Ln", city: "Austin", state: "Texas", zip: "78735", phone: "5124562348", website: "www.gettinfoodoutthere.com")
 a = d3.addresses.create!(street_number: "21", street_name: "Winslow Ave", city: "Austin", state: "Texas", zip: "78704", phone: "5126780033", website: "www.makinfood.com")
 a = d4.addresses.create!(street_number: "4321", street_name: "Navigation Rd", city: "Austin", state: "Texas", zip: "78706", phone: "5123338888", website: "www.gitfoodtoyou.com")
 a = d5.addresses.create!(street_number: "9000", street_name: "Whitestone", city: "Austin", state: "Texas", zip: "78710", phone: "5129996700", website: "www.wedeliverfood.com")
 a = d6.addresses.create!(street_number: "8900", street_name: "Old Farm Rd", city: "Austin", state: "Texas", zip: "78730", phone: "512777300", website: "www.foodeliver.com")
-
