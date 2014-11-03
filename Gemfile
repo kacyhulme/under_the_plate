@@ -11,6 +11,8 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'debugger'
   gem 'rspec-rails','~> 3.0.0'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :production do
