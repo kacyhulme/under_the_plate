@@ -14,10 +14,10 @@ class EstablishmentsController < ApplicationController
   end
 
   def show
-    @cuisines = @establishment.cuisines
     @addressable = @establishment
     @addresses = @addressable.addresses
     @address = Address.new
+    @cuisines = @establishment.cuisines
     @distributors = @establishment.distributors
     @qualifications = @establishment.qualifications
   end
