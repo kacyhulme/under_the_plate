@@ -58,6 +58,6 @@ class EstablishmentsController < ApplicationController
   end
 
   def establishment_params
-    params.require(:establishment).permit(:name, :address_id, :owner, :distributor_id, :cuisine)
+    params.require(:establishment).permit(:name, :owner, :distributor_id, :cuisine)
   end
 end

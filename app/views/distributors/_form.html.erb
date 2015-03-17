@@ -7,8 +7,8 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :address_id %>
-      <%= collection_select :establishment, :address_id, Address.all, :id, :address_display_name, {prompt: "Select an address"}, {class: "form-control"} %>
+      <%= f.label :addressable_id %>
+      <%= collection_select :establishment, :addressable_id, Address.all, :id, :address_display_name, {prompt: "Select an address"}, {class: "form-control"} %>
     </div>
 
     <div class="form-group">

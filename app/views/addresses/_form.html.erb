@@ -37,11 +37,11 @@
   </div>
 
   <div class="actions">
-
-      <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
-
-
-
+    <% if @address.new_record? %>
+      <%= f.submit "Add Address", class: "btn btn-primary btn-sm" %>
+    <% else %>
+      <%= f.submit "Update Address", class: "btn btn-primary btn-sm"  %>
+    <% end %>
   </div>
 
 <% end %>
