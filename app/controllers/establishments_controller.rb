@@ -16,11 +16,11 @@ class EstablishmentsController < ApplicationController
   def show
     @establishment = Establishment.find(params[:id])
     @addressable = @establishment
-    # @addresses = @addressable.addresses
+    @addresses = @addressable.addresses
     @address = Address.new
-    # @cuisines = @establishment.cuisines
-    # @distributors = @establishment.distributors
-    # @qualifications = @establishment.qualifications
+    @cuisines = @establishment.cuisines
+    @distributors = @establishment.distributors
+    @qualifications = @establishment.qualifications
   end
 
   def new

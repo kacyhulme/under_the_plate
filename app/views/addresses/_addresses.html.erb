@@ -1,0 +1,9 @@
+<div>   
+  <% @addressable.addresses.each do |address| %>    
+  <p><%= address.street_number %> <%= address.street_name %></p>    
+  <p><%= address.city %> <%= address.state %> <%= address.zip %></p>  
+  <p>words here</p>  
+  <p><%= number_to_phone(address.phone, area_code: true) %></p>   
+  <p><%= address.website %></p>   
+  <% end %>   
+</div>   

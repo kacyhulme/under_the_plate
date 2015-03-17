@@ -9,9 +9,9 @@
     <div class="col-md-3">
       <h3> Locations </h3>
       <%= render 'addresses/addresses' %>
-      <div>
-        <p><%= link_to "Add a New Location", new_establishment_address_path(@establishment), class: "btn btn-primary btn-sm" %></p>
-      </div>
+      <hr>
+      <h4>Add a New Address</h4>
+      <%= render 'addresses/form' %>
     </div>
 
     <div class="col-md-3">
