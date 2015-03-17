@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   
-  resources :qualification_statuses
-
-  resources :qualifications
-
   get 'welcome' => 'welcome#index'
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
@@ -14,6 +10,8 @@ Rails.application.routes.draw do
   resources :users
   resources :food_groups
   resources :cuisines
+  resources :qualification_statuses
+  resources :qualifications
 
   resources :distributors do
     resources :addresses

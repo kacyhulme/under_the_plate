@@ -27,8 +27,11 @@ class AddressesController < ApplicationController
   private
 
   def load_addressable
-    klass = [Establishment, Distributor].detect { |c| params["#{c.name.underscore}_id"]}
-    @addressable = klass.find_by(params["slug"])
+    # klass = [Establishment, Distributor].detect { |c| params["#{c.name.underscore}_id"]}
+    # @addressable = klass.find_by(params["#{klass.name.underscore}_id"])
+
+    resource, id = request.path.split('/')[1,2]
+    @addressable = resource.singularize.classify.constantize.find(id)
   end
 
   def address_params

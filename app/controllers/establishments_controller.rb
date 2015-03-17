@@ -1,7 +1,7 @@
 class EstablishmentsController < ApplicationController
   before_action :require_signin, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
-  before_action :set_establishment, only: [:show, :edit, :update, :destroy]
+  # before_action :set_establishment, only: [:show, :edit, :update, :destroy]
 
   def index
     flash[:alert] = "Click on an establishment below to see what ingredients they use, what certifications they have and any special practices they follow that make their food and their service exceptional!"
@@ -14,12 +14,13 @@ class EstablishmentsController < ApplicationController
   end
 
   def show
+    @establishment = Establishment.find(params[:id])
     @addressable = @establishment
-    @addresses = @addressable.addresses
+    # @addresses = @addressable.addresses
     @address = Address.new
-    @cuisines = @establishment.cuisines
-    @distributors = @establishment.distributors
-    @qualifications = @establishment.qualifications
+    # @cuisines = @establishment.cuisines
+    # @distributors = @establishment.distributors
+    # @qualifications = @establishment.qualifications
   end
 
   def new

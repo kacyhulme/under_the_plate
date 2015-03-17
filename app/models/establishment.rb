@@ -1,7 +1,7 @@
 class Establishment < ActiveRecord::Base
 
-  extend FriendlyId
-  friendly_id :name, use: :slugged
+  # extend FriendlyId
+  # friendly_id :name, use: :slugged
 
   has_many :addresses, as: :addressable
   has_many :distributors, through: :distributions 
@@ -11,7 +11,7 @@ class Establishment < ActiveRecord::Base
   has_many :qualification_statuses
   has_many :qualifications, through: :qualification_statuses
 
-  validates :slug, uniqueness: true
+  # validates :slug, uniqueness: true
   validates :name, presence: true, uniqueness: true
   validates :address_id, presence: true, allow_blank: true
 
