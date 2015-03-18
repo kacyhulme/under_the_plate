@@ -1,1 +1,13 @@
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=78703&zoom=14&size=400x400" %>
+<div class="container"> 
+  <div class="row"> 
+    <div class="col-md-6">
+      <p><%= @address.address_display_street%></p>
+      <p><%= @address.address_display_city %></p>
+      <p><%= number_to_phone(@address.phone, area_code: true) %></p>
+      <p><%= link_to @address.website %><p>
+    </div>
+    <div class="col-md-6">
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=13&markers=#{@address.latitude}%2C#{@address.longitude}" %>
+    </div>
+  </div>
+</div>

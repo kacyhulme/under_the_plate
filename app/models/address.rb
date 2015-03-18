@@ -9,7 +9,15 @@ class Address < ActiveRecord::Base
 
   after_validation :geocode
 
-  def address_display_name #format address display for form
+  def address_display_name #format address display for form collection select drop down
     "#{street_number}" + " " +"#{street_name}" + " " + "#{zip}"
+  end
+
+  def address_display_street
+    "#{street_number}" + " " +"#{street_name}"
+  end
+
+  def address_display_city
+    "#{city}" + ", " +"#{state}" + " " + "#{zip}"
   end
 end
