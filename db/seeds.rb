@@ -113,7 +113,10 @@ Cuisine.create!([
     },
   {
     name: "Coffee Shop"
-    }
+    },
+   {
+    name: "Sushi"
+   } 
 ])
 
 User.create! ([
@@ -150,22 +153,26 @@ User.create! ([
 CuisineCategorization.create! ([
   {
     establishment_id: 1,
-    cuisine_id: 6
+    cuisine_id: 1
     },
   {
     establishment_id: 2,
-    cuisine_id: 3
+    cuisine_id: 8
     },
   {
     establishment_id: 3,
-    cuisine_id: 4
+    cuisine_id: 9
     },
   {
     establishment_id: 4,
-    cuisine_id: 7
+    cuisine_id: 11
     },
   {
     establishment_id: 5,
+    cuisine_id: 9
+    },
+  {
+    establishment_id: 6,
     cuisine_id: 2
     }
 ])
@@ -262,52 +269,59 @@ Qualification.create! ([
   },
     {
     name: "Kosher"
+  },
+    {
+    name: "Local"
   }
 ])
 QualificationStatus.create! ([
   {
     establishment_id: 1,
-    qualification_id: 7
+    qualification_id: 2
   },
   {
     establishment_id: 2,
-    qualification_id: 6
+    qualification_id: 2
   },
     {
     establishment_id: 3,
-    qualification_id: 5
+    qualification_id: 6
   },
     {
     establishment_id: 4,
-    qualification_id: 4
+    qualification_id: 2
   },
     {
     establishment_id: 5,
-    qualification_id: 3
+    qualification_id: 8
   },
     {
     establishment_id: 6,
     qualification_id: 2
   },
     {
-    establishment_id: 6,
-    qualification_id: 1
+    establishment_id: 1,
+    qualification_id: 8
   },
     {
-    establishment_id: 5,
-    qualification_id: 7
+    establishment_id: 2,
+    qualification_id: 8
+  },
+    {
+    establishment_id: 3,
+    qualification_id: 6
   },
     {
     establishment_id: 4,
     qualification_id: 6
   },
     {
-    establishment_id: 3,
-    qualification_id: 5
+    establishment_id: 5,
+    qualification_id: 1
   },
-    {
-    establishment_id: 2,
-    qualification_id: 4
+  {
+    establishment_id: 6,
+    qualification_id: 2
   }
 ])
 e1 = Establishment.find(1)
@@ -317,12 +331,12 @@ e4 = Establishment.find(4)
 e5 = Establishment.find(5)
 e6 = Establishment.find(6)
 
-a = e1.addresses.create!(street_number: "45", street_name: "Crawford", city: "Austin", state: "Texas", zip: "78704", phone: "5129990564", website: "www.makemefood.com")
-a = e2.addresses.create!(street_number: "344", street_name: "Menlow Drive", city: "Austin", state: "Texas", zip: "78705", phone: "5125559000", website: "www.foodisfun.com")
-a = e3.addresses.create!(street_number: "67888", street_name: "Nexus St", city: "Austin", state: "Texas", zip: "78702", phone: "5124508900", website: "www.website.com")
-a = e4.addresses.create!(street_number: "10", street_name: "Montgomery St", city: "Austin", state: "Texas", zip: "78708", phone: "5123402222", website: "www.ilovetoeat.com")
-a = e5.addresses.create!(street_number: "23", street_name: "Bellingham", city: "Austin", state: "Texas", zip: "78709", phone: "5122106500", website: "www.iamsohungry.com")
-a = e6.addresses.create!(street_number: "2999", street_name: "Sinclair Rd", city: "Austin", state: "Texas", zip: "78729", phone: "5123909888", website: "www.wannaeatnow.com")
+a = e1.addresses.create!(street_number: "1110", street_name: "West Lynn St", city: "Austin", state: "Texas", zip: "78703", phone: "5124728226", website: "www.zocalocafe.com")
+a = e2.addresses.create!(street_number: "1900", street_name: "South 1st St", city: "Austin", state: "Texas", zip: "78704", phone: "5124161601", website: "www.bouldincreek.com")
+a = e3.addresses.create!(street_number: "1000", street_name: "West Lynn St", city: "Austin", state: "Texas", zip: "78703", phone: "5124783434", website: "www.galaxycafeaustin.com")
+a = e4.addresses.create!(street_number: "1611", street_name: "West 5th St", city: "Austin", state: "Texas", zip: "78703", phone: "5124747000", website: "www.sushizushi.com")
+a = e5.addresses.create!(street_number: "1201", street_name: "S Lamar Blvd", city: "Austin", state: "Texas", zip: "78704", phone: "5124336521", website: "www.oddduckaustin.com")
+a = e6.addresses.create!(street_number: "1415", street_name: "S Congress Ave", city: "Austin", state: "Texas", zip: "78704", phone: "5124447437", website: "www.homeslicepizza.com")
 
 
 d1 = Distributor.find(1)
