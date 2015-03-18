@@ -6,18 +6,16 @@
   </div>
 
   <div class="row"> 
-    <div class="col-md-3">
+    <div class="col-md-5">
       <h3> Locations </h3>
       <% @establishment.addresses.each do |address| %>
-      <p><%= address.zip %>
-      <%= link_to "Location Details", establishment_address_path(@establishment, address) %></p>
-      
-      <% end %>
-      <hr>
+      <p><%= address.address_display_name %>
+        <%= link_to "Location Details", establishment_address_path(@establishment, address) %></p>
+        <% end %>
       <p><%= link_to "Add New Location", new_establishment_address_path(@establishment) %></p>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="row">
         <h3> Distributors </h3>
         <% @establishment.distributors.each do |d| %>
@@ -31,7 +29,7 @@
         <% end %>
       </div>
     </div>
-    
+
     <div class="col-md-3">
       <div class="row">
         <h3> Qualifications </h3>
@@ -43,14 +41,17 @@
         <h3> Special Items </h3>
       </div>
     </div>
-
-    <div class="col-md-3">
-      <p><%= link_to 'View All Establishments', establishments_path, class: "btn btn-primary btn-sm" %></p>
-      <% if current_user_admin? %>
-      <p><%= link_to "Edit Establishment", edit_establishment_path(@establishment), class: "btn btn-primary btn-sm" %></p>
-      <p><%= link_to "Delete Establishment", @establishment, method: :delete, 
-      data: { confirm: "Are you sure you want to delete this establishment?" }, class: "btn btn-primary btn-sm" %></p>
-      <% end %>
-    </div>
-  </div>  
+  </div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <div class="button-margin"><%= link_to 'View All Establishments', establishments_path, class: "btn btn-primary btn-sm" %></div>
+    <% if current_user_admin? %>
+    <div class="button-margin"><%= link_to "Edit Establishment", edit_establishment_path(@establishment), class: "btn btn-primary btn-sm" %></div>
+    <div class="button-margin"><%= link_to "Delete Establishment", @establishment, method: :delete, 
+    data: { confirm: "Are you sure you want to delete this establishment?" }, class: "btn btn-primary btn-sm" %></div>
+    <% end %>
+  </div>
+</div>
+</div>  
 </div>
