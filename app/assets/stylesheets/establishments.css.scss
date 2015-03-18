@@ -14,3 +14,19 @@
 #establishment_header {
 	margin-bottom: 5px;
 }
+
+.button-margin {
+  margin-right: 10px;
+  float: left;
+}
+
+.checkbox-style {
+  .checkbox {
+    display: inline;
+    margin-right: 7px;
+    margin-bottom: 5px;
+  }
+  label {
+    margin-right: 25px;
+  }
+}
