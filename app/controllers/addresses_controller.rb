@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-  before_filter :load_addressable
+  before_action :load_addressable
   before_action :require_signin
   before_action :require_admin
 
@@ -8,7 +8,7 @@ class AddressesController < ApplicationController
   end
 
   def show
-
+    @address = @addressable.addresses.find(params[:id])
   end
 
   def new
@@ -16,7 +16,7 @@ class AddressesController < ApplicationController
   end
 
   def create
-    @address = @addressable.addresses.new(params[:address_params])
+    @address = @addressable.addresses.new(address_params)
     if @address.save
       redirect_to @addressable, notice: "Thanks, that address was created."
     else
@@ -27,14 +27,11 @@ class AddressesController < ApplicationController
   private
 
   def load_addressable
-    # klass = [Establishment, Distributor].detect { |c| params["#{c.name.underscore}_id"]}
-    # @addressable = klass.find_by(params["#{klass.name.underscore}_id"])
-
-    resource, id = request.path.split('/')[1,2]
-    @addressable = resource.singularize.classify.constantize.find(id)
+    @addressable = Establishment.find params[:establishment_id]
   end
 
   def address_params
+    #params[:address]
     params.require(:address).permit(:street_number, :street_name, :city, :state, :zip, :phone, :website)
   end
 end
