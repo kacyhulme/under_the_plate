@@ -8,10 +8,13 @@
   <div class="row"> 
     <div class="col-md-3">
       <h3> Locations </h3>
-      <%= render 'addresses/addresses' %>
+      <% @establishment.addresses.each do |address| %>
+      <p><%= address.zip %>
+      <%= link_to "Location Details", establishment_address_path(@establishment, address) %></p>
+      
+      <% end %>
       <hr>
-      <h4>Add a New Address</h4>
-      <%= render 'addresses/form' %>
+      <p><%= link_to "Add New Location", new_establishment_address_path(@establishment) %></p>
     </div>
 
     <div class="col-md-3">

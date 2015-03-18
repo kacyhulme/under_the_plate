@@ -5,9 +5,9 @@ class Address < ActiveRecord::Base
   # validates :addressable_type, :addressable_id, :street_number, :street_name,
   # :city, :state, :zip, :phone, :website, presence: true
 
-  # geocoded_by :address
+  geocoded_by :zip  #or use address_display_name
 
-  # after_validation :geocode
+  after_validation :geocode
 
   def address_display_name #format address display for form
     "#{street_number}" + " " +"#{street_name}" + " " + "#{zip}"
