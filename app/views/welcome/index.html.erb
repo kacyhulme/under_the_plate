@@ -1,14 +1,21 @@
-<title><%= custom_title %></title>
+<title>Healthy For Real</title>
 <div class="jumbotron">
-  <h1><b>What's Under Your Plate?</b></h2>
-    <p>Learn the true source for the food you eat.</p>
-    <div>
-      <%= form_tag(establishments_path, method: "get") do %>
-        <div class="form-group">
-          <%= text_field_tag :search, params[:search], placeholder: "Enter the name of an eatery", class: "form-control" %>
-          <div class="caption"> Type in <i>Odd Duck</i>, <i>Galaxy</i> or <i>Zocalo</i> as surefire examples</div>
-          <div class="actions"><%= submit_tag "Search", :name => nil, class: "btn btn-primary btn-sm" %></div>
-        </div>
-      <% end %>
+  <h1><b>Is It Healthy... For Real?</b></h1>
+  <p>Learn the true source for the food you eat.</p>
+  <div>
+    <%= form_tag(establishments_path, method: "get") do %>
+    <div class="form-group">
+      <%= text_field_tag :search, params[:search], placeholder: "Enter the name of an eatery", class: "form-control" %>
+      <div class="caption"> Type in <i>Odd Duck</i>, <i>Galaxy</i> or <i>Zocalo</i> as surefire examples</div>
+      <div class="actions"><%= submit_tag "Search", :name => nil, class: "btn btn-primary btn-sm" %></div>
     </div>
+    <% end %>
+
+    <ul class="nav nav-pills nav-justified">
+      <li role="presentation"><%= link_to "Blog", root_url%></li>
+      <li role="presentation"><%= link_to "Recipes", root_url%></li>
+      <li role="presentation"><%= link_to "Products", root_url%></li>
+      <li role="presentation"><%= link_to "Animals", root_url%></li>
+    </ul>
+  </div>
 </div>
