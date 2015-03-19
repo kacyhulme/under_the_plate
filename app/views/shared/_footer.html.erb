@@ -1,8 +1,14 @@
 <div class="container" %>
-<footer class="footer">
-  <p>
-    Copyright &copy; 2014
-    <%= link_to 'Kacy Hulme','https://github.com/kacyhulme' %>
-  </p>
-</footer>
+  <footer class="footer">
+    <ul class="nav nav-pills nav-justified">
+      <li role="presentation"><%= link_to "Blog", root_url%></li>
+      <li role="presentation"><%= link_to "Recipes", root_url%></li>
+      <li role="presentation"><%= link_to "Products", root_url%></li>
+      <li role="presentation"><%= link_to "Animals", root_url%></li>
+    </ul>
+    <p class="copyright">
+      Copyright &copy; 2014
+      <%= link_to 'Kacy Hulme','https://github.com/kacyhulme' %>
+    </p>
+  </footer>
 </div>
