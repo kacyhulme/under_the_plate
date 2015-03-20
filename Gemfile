@@ -51,3 +51,5 @@ gem 'friendly_id', '~> 5.0.0', :require => "friendly_id"
 
 gem 'geocoder'
 #gem 'gmaps4rails', '2.0.3'
+
+gem 'monologue'
