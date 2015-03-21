@@ -1,15 +1,17 @@
 <% content_for(:title, @user.name) %>
-
+<div class="add-margin">
+	<%= link_to "Find Out What's Healthy!", establishments_path, class: "btn btn-primary btn-sm"  %>
+</div>
 <article>
 	<header>
 		<h2>Name: <%= @user.name %></h2>
 		<h2>Email: <%= @user.email %></h2>
 	</header>
-  <div class="member">Member since: <%= @user.created_at %></div>
+	<div class="member">Member since: <%= @user.created_at %></div>
 
 	<% if current_user?(@user) %>
 	<%= link_to "Edit Account", edit_user_path(@user), class: "btn btn-primary btn-sm"  %>
 	<%= link_to "Delete Account", @user, method: :delete, 
-			data: { confirm: "Are you sure you want to delete your account?" }, class: "btn btn-primary btn-sm"  %>
+	data: { confirm: "Are you sure you want to delete your account?" }, class: "btn btn-primary btn-sm"  %>
 	<% end %>
 </article>

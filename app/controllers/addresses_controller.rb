@@ -1,7 +1,7 @@
 class AddressesController < ApplicationController
   before_action :load_addressable
   before_action :require_signin
-  before_action :require_admin
+  before_action :require_admin, except: [:index, :show, :new, :create]
 
   def index
     @addresses = @addressable.addresses

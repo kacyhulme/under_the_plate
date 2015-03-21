@@ -44,7 +44,7 @@ Distributor.create!([
     },
  {
     food_group_id: 3,
-    name: "Good Food Delivery Distribution Services"
+    name: "Good Food Delivery"
     },
  {
     food_group_id: 4,
