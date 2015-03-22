@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
   get 'users/filter/:scope' => "users#index", as: :filtered_users 
+  get 'recipes' => "welcome"
+  get 'advocacy' => "welcome"
+  get 'products' => "welcome"
 
   resources :distributions
   resource :session
@@ -20,6 +23,7 @@ Rails.application.routes.draw do
   resources :establishments do
     resources :addresses
   end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -5,18 +5,6 @@
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %>
   </div>
-<!-- 
-  <div class="form-group">
-    <%= f.label :addressable_id %>
-    <%= f.collection_select :id, Address.all, :addressable_id, :address_display_name, {prompt: "Select an address"}, {class: "form-control"} %>
-  </div>
- -->
-  <div class="add-border">
-    <p>Choose all that apply</p>
-    <div class="form-group checkbox-style">
-      <%= f.collection_check_boxes :distributor_ids, Distributor.all, :id, :name, {}, {class: "checkbox"}  %>
-    </div>
-  </div>
 
   <div class="add-border">
     <p>Choose all that apply</p>
@@ -24,6 +12,29 @@
       <%= f.collection_check_boxes :cuisine_ids, Cuisine.all, :id, :name, {}, {class: "checkbox"}  %>
     </div>
   </div>
+
+<% if current_user.admin? %>
+  <div class="add-border">
+    <p>Choose all that apply</p>
+    <div class="form-group checkbox-style">
+      <%= f.collection_check_boxes :qualification_ids, Qualification.all, :id, :name, {}, {class: "checkbox"}  %>
+    </div>
+  </div>
+
+   <div class="add-border">
+    <p>Choose all that apply</p>
+    <div class="form-group checkbox-style">
+      <%= f.collection_check_boxes :distributor_ids, Distributor.all, :id, :name, {}, {class: "checkbox"}  %>
+    </div>
+  </div>
+
+   <div class="add-border">
+    <p>Choose all that apply</p>
+    <div class="form-group checkbox-style">
+      <%= f.collection_check_boxes :distributor_ids, Distributor.all, :id, :name, {}, {class: "checkbox"}  %>
+    </div>
+  </div>
+<% end %>
   
   <div class="actions">
     <% if @establishment.new_record? %>
