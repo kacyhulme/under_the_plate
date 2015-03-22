@@ -53,3 +53,4 @@ gem 'geocoder'
 #gem 'gmaps4rails', '2.0.3'
 
 gem 'monologue'
+gem 'non-stupid-digest-assets', '~> 1.0.4'
