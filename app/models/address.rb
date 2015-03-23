@@ -5,7 +5,7 @@ class Address < ActiveRecord::Base
   # validates :addressable_type, :addressable_id, :street_number, :street_name,
   # :city, :state, :zip, :phone, :website, presence: true
 
-  geocoded_by :zip  #or use address_display_name
+  geocoded_by :address_display_name
 
   after_validation :geocode
 
