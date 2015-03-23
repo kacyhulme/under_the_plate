@@ -13,6 +13,7 @@
     <%= render 'layouts/nav' %>
 
     <div class="container">
+      <% unless flash.empty? %>
       <div class="flash">
         <% if flash[:notice] %>
           <div class="alert alert-info">
@@ -20,7 +21,10 @@
           </div>
         <% end %>
       </div>
+      <% end %>
+
       <%= yield %>
+
     </div>
     <%= javascript_include_tag "application" %>
   </body>

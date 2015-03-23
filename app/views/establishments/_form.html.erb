@@ -7,7 +7,7 @@
   </div>
 
   <div class="add-border">
-    <p>Choose all that apply</p>
+    <p>Choose all Cuisines that apply</p>
     <div class="form-group checkbox-style">
       <%= f.collection_check_boxes :cuisine_ids, Cuisine.all, :id, :name, {}, {class: "checkbox"}  %>
     </div>
@@ -15,21 +15,14 @@
 
 <% if current_user.admin? %>
   <div class="add-border">
-    <p>Choose all that apply</p>
+    <p>Choose all Qualifications that apply</p>
     <div class="form-group checkbox-style">
       <%= f.collection_check_boxes :qualification_ids, Qualification.all, :id, :name, {}, {class: "checkbox"}  %>
     </div>
   </div>
 
    <div class="add-border">
-    <p>Choose all that apply</p>
-    <div class="form-group checkbox-style">
-      <%= f.collection_check_boxes :distributor_ids, Distributor.all, :id, :name, {}, {class: "checkbox"}  %>
-    </div>
-  </div>
-
-   <div class="add-border">
-    <p>Choose all that apply</p>
+    <p>Choose all Distributor that apply</p>
     <div class="form-group checkbox-style">
       <%= f.collection_check_boxes :distributor_ids, Distributor.all, :id, :name, {}, {class: "checkbox"}  %>
     </div>
