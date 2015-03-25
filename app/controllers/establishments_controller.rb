@@ -1,7 +1,7 @@
 class EstablishmentsController < ApplicationController
   before_action :require_signin, except: [:index, :show]
   before_action :require_admin, except: [:index, :show, :new, :create]
-  # before_action :set_establishment, only: [:show, :edit, :update, :destroy]
+  before_action :set_establishment, only: [:show, :edit, :update, :destroy]
 
   def index
     flash[:alert] = "Click on an establishment below to see where they get their ingredients and what certifications they have."
@@ -14,7 +14,7 @@ class EstablishmentsController < ApplicationController
   end
 
   def show
-    @establishment = Establishment.find(params[:id])
+    # @establishment = Establishment.find(params[:id])
     @addressable = @establishment
     @addresses = @addressable.addresses
     @address = Address.new
@@ -37,7 +37,7 @@ class EstablishmentsController < ApplicationController
   end
 
   def edit
-    @establishment = Establishment.find(params[:id])
+
   end
 
   def update

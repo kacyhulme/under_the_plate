@@ -1,7 +1,7 @@
 class Establishment < ActiveRecord::Base
 
-  # extend FriendlyId
-  # friendly_id :name, use: :slugged
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   has_many :addresses, as: :addressable
   has_many :distributors, through: :distributions 
