@@ -6,6 +6,7 @@
       <%= f.text_field :name, class: "form-control" %>
     </div>
 
+    <% if current_user.admin? %>
     <div class="form-group">
       <%= f.label :addressable_id %>
       <%= collection_select :establishment, :addressable_id, Address.all, :id, :address_display_name, {prompt: "Select an address"}, {class: "form-control"} %>
@@ -19,6 +20,7 @@
     <div class="form-group">
       <%= f.collection_check_boxes :food_group_ids, FoodGroup.all, :id, :name, {}, {class: "form-control"}  %>
     </div>
+    <% end %>
 
     <div class="actions">
       <% if @distributor.new_record? %>

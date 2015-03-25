@@ -12,7 +12,9 @@
       <p><%= address.address_display_name %>
         <%= link_to "Location Details", establishment_address_path(@establishment, address) %></p>
         <% end %>
+        <% if current_user.admin? %>
         <p><%= link_to "Add a Location", new_establishment_address_path(@establishment) %></p>
+        <% end %>
       </div>
 
       <div class="col-md-4">
@@ -42,7 +44,7 @@
         </div>
       </div>
     </div>
-    <hr>
+
     <div class="row">
       <div class="col-md-12">
         <div class="button-margin"><%= link_to 'View All Establishments', establishments_path, class: "btn btn-primary btn-sm" %></div>

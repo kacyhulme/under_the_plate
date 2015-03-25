@@ -12,7 +12,7 @@ class Establishment < ActiveRecord::Base
   has_many :qualifications, through: :qualification_statuses
 
   # validates :slug, uniqueness: true
-  # validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true
   
   scope :recent, -> { where('created_at < ?', Time.now).order(:name).limit(3)}
 

@@ -1,6 +1,6 @@
 class DistributorsController < ApplicationController
   before_action :require_signin, except: [:index, :show]
-  before_action :require_admin, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show, :new, :create]
   before_action :set_distributor, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -18,7 +18,7 @@ class DistributorsController < ApplicationController
   def create
     @distributor = Distributor.new(distributor_params)
     if @distributor.save
-      redirect_to @distributor, notice: "Distributor was successfully added!"
+      redirect_to @distributor, notice: "Thanks! Distributor was successfully added! An administrator will fill in the rest."
     else
       render :new
     end
