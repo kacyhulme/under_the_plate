@@ -4,7 +4,7 @@ end
 
 Monologue.config do |config|
   config.site_name = "Healthy For Real"
-  config.site_subtitle = "Learn the true source for the food you eat."
+  config.site_subtitle = "Learn the true source for the food you eat  "
   config.site_url = "http://healthyforreal.com"
 
   config.meta_description = "Is the food you get from restaurants healthy, vegetarian, local"
