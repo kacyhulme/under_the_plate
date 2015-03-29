@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/kacyhulme/monologue.git
-  revision: bc16f252609819a618aa56d646be46ea40ecbbae
+  revision: a78ef1164c8b21bad43f48f016c9e48b9535356b
   specs:
     monologue (0.4.1)
       bcrypt (~> 3.1.7)
