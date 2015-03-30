@@ -6,7 +6,7 @@
     <%= f.text_field :name, class: "form-control" %>
   </div>
 
-<% if current_user.admin? %>
+  <% if current_user.admin? %>
   <div class="add-border">
     <p>Choose all Cuisines that apply</p>
     <div class="form-group checkbox-style">
@@ -21,20 +21,28 @@
     </div>
   </div>
 
-   <div class="add-border">
+  <div class="add-border">
     <p>Choose all Distributor that apply</p>
     <div class="form-group checkbox-style">
       <%= f.collection_check_boxes :distributor_ids, Distributor.all, :id, :name, {}, {class: "checkbox"}  %>
     </div>
   </div>
-<% end %>
-  
-  <div class="actions">
-    <% if @establishment.new_record? %>
-    <%= f.submit "Add Establishment", class: "btn btn-primary btn-sm" %>
-    <% else %>
-    <%= f.submit "Update Establishment", class: "btn btn-primary btn-sm"  %>
-    <% end %>
-  </div>
+
+  <div class="add-border">
+    <p>Edit the Summary</p>
+    <div class="form-group">
+      <%= f.label :description %>
+     <%= f.text_area :description, class: "form-control" %>
+   </div>
+ </div>
+ <% end %>
+
+ <div class="actions">
+  <% if @establishment.new_record? %>
+  <%= f.submit "Add Establishment", class: "btn btn-primary btn-sm" %>
+  <% else %>
+  <%= f.submit "Update Establishment", class: "btn btn-primary btn-sm"  %>
+  <% end %>
+</div>
 </fieldset>
 <% end %>

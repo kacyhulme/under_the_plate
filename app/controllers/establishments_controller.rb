@@ -59,6 +59,6 @@ class EstablishmentsController < ApplicationController
   end
 
   def establishment_params
-    params.require(:establishment).permit(:name, :owner, {:distributor_ids => []}, {:cuisine_ids => []})
+    params.require(:establishment).permit(:name, :owner, :description, {:distributor_ids => []}, {:cuisine_ids => []})
   end
 end
