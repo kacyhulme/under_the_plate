@@ -4,27 +4,28 @@
   <div class="row">
     <div class="col-md-12">
       <h1><%= @distributor.name %></h1>
+      <h1><%= @distributor.description %></h1>
     </div>
     <div class="col-md-4">
       <h3>Addresses:</h3>
-        <div>
-          <% @distributor.addresses.each do |d| %>
-            <p><%= d.street_number %><%= " "%><%= d.street_name %></p>
-            <p><%= d.city %><%= ", "%><%= d.state %><%= " "%><%= d.zip %></p>
-            <p><%= d.phone %></p>
-            <p><%= d.website %></p>
-          <% end %>
-        </div>
+      <div>
+        <% @distributor.addresses.each do |d| %>
+        <p><%= d.street_number %><%= " "%><%= d.street_name %></p>
+        <p><%= d.city %><%= ", "%><%= d.state %><%= " "%><%= d.zip %></p>
+        <p><%= d.phone %></p>
+        <p><%= d.website %></p>
+        <% end %>
+      </div>
     </div>
     <div class="col-md-4">
     	<h3>Food Groups: </h3>
-    		<ul>
-    		<% @food_groups.each do |f| %>
-    		<li><%= f.name %></li>
-    		<% end %>
-    	</ul>
-	 </div>
-  
+      <ul>
+        <% @food_groups.each do |f| %>
+        <li><%= f.name %></li>
+        <% end %>
+      </ul>
+    </div>
+
 
     <div class="col-md-3">
       <p><%= link_to 'All Distributors', distributors_path, class: "btn btn-primary btn-sm" %></p>
