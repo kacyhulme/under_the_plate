@@ -27,7 +27,7 @@ class AddressesController < ApplicationController
   private
 
   def load_addressable
-    @addressable = Establishment.find params[:establishment_id]
+    @addressable = Establishment.find params[:id]
   end
 
   def address_params
