@@ -1,0 +1,25 @@
+<%= form_for([:establishment, @comment]) do |f| %>
+<%= render "shared/errors", object: @comment %>
+<fieldset>
+  <div class="form-group">
+    <%= f.label :text %>
+    <%= f.text_area :text, class: "form-control" %>
+  </div>
+
+  <div class="add-border">
+    <p>Number of Stars</p>
+    <div class="form-group">
+      <%= f.label :stars %>
+      <% Comment::STARS.each do |star| %>
+      <span class="star">
+        <%= f.radio_button :stars, star %> <%= star %>
+      </span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Comment", class: "btn btn-primary btn-sm" %>
+  </div>
+</fieldset>
+<% end %>

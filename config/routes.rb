@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :comments
 
   get 'welcome' => 'welcome#index'
   get 'signup' => 'users#new'
@@ -24,6 +23,7 @@ Rails.application.routes.draw do
 
   resources :establishments do
     resources :addresses
+    resources :comments
   end
 
 
