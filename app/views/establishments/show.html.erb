@@ -20,7 +20,7 @@
 
     <div class="col-md-4">
       <div class="row">
-        <h3> Distributors </h3>
+        <h3> Distributors They Use</h3>
         <% if @establishment.distributors.blank? %>
         <h3>TBD</h3>
         <% else %>
@@ -31,7 +31,7 @@
       </div>
 
       <div class="row">
-        <h3> Cuisine </h3>
+        <h3> Type of Cuisine </h3>
         <% @establishment.cuisines.each do |cuisine| %>
         <p><%= cuisine.name %></p>
         <% end %>
@@ -40,7 +40,7 @@
 
     <div class="col-md-3">
       <div class="row">
-        <h3> Qualifications </h3>
+        <h3> Certifications and Qualifications </h3>
         <% @establishment.qualifications.each do |q| %>
         <p><%= q.name %></p>
         <% end %>
@@ -50,7 +50,7 @@
 
   <div class="row add-margin-bottom">
     <div class="col-md-12">
-      <h3> Summary for <%= @establishment.name %> </h3>
+      <h3> What we really think about <%= @establishment.name %> </h3>
       <p><%= @establishment.description %></p>
     </div>
   </div>
