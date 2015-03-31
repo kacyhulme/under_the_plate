@@ -7,5 +7,6 @@
 	<% end %>
 </ul>
 
-
+<% if current_user_admin? %>
 <%= link_to "Add New Distributor", new_distributor_path, class: "btn btn-primary btn-sm"  %>
+<% end %>

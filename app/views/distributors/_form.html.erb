@@ -1,33 +1,24 @@
 <%= form_for(@distributor) do |f| %>
-  <%= render "shared/errors", object: @distributor %>
-  <fieldset>
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
+<%= render "shared/errors", object: @distributor %>
+<fieldset>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
 
-    <% if current_user.admin? %>
-    <div class="form-group">
-      <%= f.label :addressable_id %>
-      <%= collection_select :establishment, :addressable_id, Address.all, :id, :address_display_name, {prompt: "Select an address"}, {class: "form-control"} %>
-    </div>
+  <% if current_user.admin? %>
+  <div class="form-group">
+    <%= f.label :food_group_id %>
+    <%= f.collection_check_boxes :food_group_id, FoodGroup.all, :id, :name, {class: "checkbox"}  %>
+  </div>
+  <% end %>
 
-    <div class="form-group">
-      <%= f.label :food_group_id %>
-      <%= collection_select :establishment, :food_group_id, FoodGroup.all, :id, :name, {prompt: "Select a distributor"}, {class: "form-control"}  %>
-    </div>
-
-    <div class="form-group">
-      <%= f.collection_check_boxes :food_group_ids, FoodGroup.all, :id, :name, {}, {class: "form-control"}  %>
-    </div>
+  <div class="actions">
+    <% if @distributor.new_record? %>
+    <%= f.submit "Add Distributor", class: "btn btn-primary btn-sm" %>
+    <% else %>
+    <%= f.submit "Update Distributor", class: "btn btn-primary btn-sm"  %>
     <% end %>
-
-    <div class="actions">
-      <% if @distributor.new_record? %>
-        <%= f.submit "Add Distributor", class: "btn btn-primary btn-sm" %>
-      <% else %>
-        <%= f.submit "Update Distributor", class: "btn btn-primary btn-sm"  %>
-      <% end %>
-    </div>
-  </fieldset>
+  </div>
+</fieldset>
 <% end %>

@@ -30,7 +30,7 @@ class EstablishmentsController < ApplicationController
   def create
     @establishment = Establishment.new(establishment_params)
     if @establishment.save
-      redirect_to @establishment, notice: "Thanks! Establishment was successfully added! An administrator will fill in the rest."
+      redirect_to @establishment, notice: "Thanks! That establishment was successfully added! An administrator will fill in the rest."
     else
       render :new
     end
