@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="jumbotron">
+    <h2>What you really think about <%= @establishment.name %></h2>
+    <% @establishment.comments.each do |c| %>
+
+    <p><%= c.user.name %> gave <%= c.stars %> stars</p>
+    <p>Saying "<%= c.text %> "</p>
+    <hr>
+    <% end %>
+  </div>
+</div>

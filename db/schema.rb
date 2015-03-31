@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150330152547) do
+ActiveRecord::Schema.define(version: 20150331170058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,18 @@ ActiveRecord::Schema.define(version: 20150330152547) do
   add_index "addresses", ["addressable_id", "addressable_type"], name: "index_addresses_on_addressable_id_and_addressable_type", using: :btree
   add_index "addresses", ["latitude"], name: "index_addresses_on_latitude", using: :btree
   add_index "addresses", ["longitude"], name: "index_addresses_on_longitude", using: :btree
+
+  create_table "comments", force: true do |t|
+    t.integer  "stars"
+    t.text     "text"
+    t.integer  "user_id"
+    t.integer  "establishment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["establishment_id"], name: "index_comments_on_establishment_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "cuisine_categorizations", force: true do |t|
     t.integer  "establishment_id"
@@ -80,6 +92,7 @@ ActiveRecord::Schema.define(version: 20150330152547) do
     t.datetime "updated_at"
     t.string   "slug"
     t.text     "description"
+    t.integer  "stars"
   end
 
   add_index "establishments", ["slug"], name: "index_establishments_on_slug", using: :btree
@@ -147,18 +160,6 @@ ActiveRecord::Schema.define(version: 20150330152547) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "products", force: true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.decimal  "price"
-    t.string   "image"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
 
   create_table "qualification_statuses", force: true do |t|
     t.boolean  "status"

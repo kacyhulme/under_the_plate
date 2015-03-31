@@ -9,54 +9,146 @@
 Establishment.create!([
   {
     name: 'Zocalo',
-    owner: "Mark Windsor"
+    owner: "Mark Windsor",
+    description: "Sed ut perspiciatis unde omnis iste natus et quasi architecto beatae vitae dicta sunt explicabo", 
+    stars: 8
     },
   {
     name: 'Bouldin Creek Cafe',
-    owner: "Chris Matthews"
+    owner: "Chris Matthews",
+    description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit", 
+    stars: 9
     },
   {
     name: 'Galaxy',
-    owner: "Selena Montgomery"
+    owner: "Selena Montgomery",
+    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium", 
+    stars: 5
     },
   {
     name: 'Sushi Zushi',
-    owner: "Xavier Banham"
+    owner: "Xavier Banham",
+    description: "Et harum quidem rerum facilis est et expedita distinctio", 
+    stars: 5
     },
   {
     name: 'Odd Duck',
-    owner: "Tom Jones"
+    owner: "Tom Jones",
+    description: "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo ", 
+    stars: 2
     },
   {
     name: 'Home Slice Pizza',
-    owner: "Homie Slice Man"
+    owner: "Homie Slice Man",
+    description: "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ", 
+    stars: 1
     }
 ])
 
+Comment.create!([
+{
+  stars: 3,
+  text: "It's all right. I've eaten at better places.",
+  user_id: 1,
+  establishment_id: 6
+  },
+{
+  stars: 4,
+  text: "This is an ok place to eat.",
+  user_id: 2,
+  establishment_id: 5
+  },
+{
+  stars: 6,
+  text: "The food is pretty good.",
+  user_id: 3,
+  establishment_id: 4
+  },
+{
+  stars: 7,
+  text: "I can always find something healthy here.",
+  user_id: 4,
+  establishment_id: 3
+  },
+{
+  stars: 3,
+  text: "Not my favorite place.",
+  user_id: 1,
+  establishment_id: 2
+  },
+  {
+  stars: 2,
+  text: "Pretty much don't like it and will probably not come back.",
+  user_id: 2,
+  establishment_id: 1
+  },
+  {
+  stars: 4,
+  text: "Pretty good. I'd come back I guess.",
+  user_id: 3,
+  establishment_id: 6
+  },
+  {
+  stars: 9,
+  text: "My favorite place to eat on the planet.",
+  user_id: 4,
+  establishment_id: 5
+  },
+  {
+  stars: 5,
+  text: "I like the food here. It's good.",
+  user_id: 1,
+  establishment_id: 4
+  },
+  {
+  stars: 7,
+  text: "Such a great place to eat. I always bring friends here.",
+  user_id: 2,
+  establishment_id: 3
+  },
+  {
+  stars: 3,
+  text: "Not so great.",
+  user_id: 3,
+  establishment_id: 2
+  },
+  {
+  stars: 5,
+  text: "Decent place to dine.",
+  user_id: 4,
+  establishment_id: 1
+  }
+  ])
 Distributor.create!([
   {
     food_group_id: 1,
-    name: "Food Manufacturers"
+    name: "Food Manufacturers",
+    description: "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ", 
     },
  {
     food_group_id: 2,
-    name: "US Foods"
+    name: "US Foods",
+    description: "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo ", 
     },
  {
     food_group_id: 3,
-    name: "Good Food Delivery"
+    name: "Good Food Delivery",
+    description: "Et harum quidem rerum facilis est et expedita distinctio", 
     },
  {
     food_group_id: 4,
-    name: "Legumes Organic"
+    name: "Legumes Organic",
+    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium", 
     },
  {
     food_group_id: 5,
-    name: "Organic Food Merchants"
+    name: "Organic Food Merchants",
+    description: "Sed ut perspiciatis unde omnis iste natus et quasi architecto beatae vitae dicta sunt explicabo", 
     },
  {
     food_group_id: 6,
-    name: "Maggie's Farm"
+    name: "Maggie's Farm",
+    description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit", 
     }
 ])
 

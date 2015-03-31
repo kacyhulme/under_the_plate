@@ -15,6 +15,18 @@
   </div>
 
   <div class="add-border">
+    <p>Number of Stars</p>
+    <div class="form-group">
+      <%= f.label :stars %>
+      <% Review::STARS.each do |star| %>
+      <span class="star">
+        <%= f.radio_button :stars, star %> <%= star %>
+      </span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="add-border">
     <p>Choose all Qualifications that apply</p>
     <div class="form-group checkbox-style">
       <%= f.collection_check_boxes :qualification_ids, Qualification.all, :id, :name, {}, {class: "checkbox"}  %>
@@ -32,17 +44,17 @@
     <p>Edit the Summary</p>
     <div class="form-group">
       <%= f.label :description %>
-     <%= f.text_area :description, class: "form-control" %>
-   </div>
- </div>
- <% end %>
-
- <div class="actions">
-  <% if @establishment.new_record? %>
-  <%= f.submit "Add Establishment", class: "btn btn-primary btn-sm" %>
-  <% else %>
-  <%= f.submit "Update Establishment", class: "btn btn-primary btn-sm"  %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+  </div>
   <% end %>
-</div>
+
+  <div class="actions">
+    <% if @establishment.new_record? %>
+    <%= f.submit "Add Establishment", class: "btn btn-primary btn-sm" %>
+    <% else %>
+    <%= f.submit "Update Establishment", class: "btn btn-primary btn-sm"  %>
+    <% end %>
+  </div>
 </fieldset>
 <% end %>

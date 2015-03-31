@@ -4,6 +4,10 @@
   <div class="row"> 
     <div class="col-md-12" id="establishment_header">
       <h1><%= @establishment.name %></h1>
+      <% @establishment.cuisines.each do |cuisine| %>
+      <p><%= cuisine.name %></p>
+      <% end %>
+      <p class="star-font-size"><%= format_stars(@establishment) %></p>
     </div>
   </div>
 
@@ -27,13 +31,6 @@
         <% @establishment.distributors.each do |d| %>
         <p><%= d.name %></p>
         <% end %>
-        <% end %>
-      </div>
-
-      <div class="row">
-        <h3> Type of Cuisine </h3>
-        <% @establishment.cuisines.each do |cuisine| %>
-        <p><%= cuisine.name %></p>
         <% end %>
       </div>
     </div>
@@ -74,4 +71,5 @@
   </div>
   <% end %>
 </div>
-</div>
+
+<%= render "comments/comments" %>
