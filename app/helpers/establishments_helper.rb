@@ -1,5 +1,5 @@
 module EstablishmentsHelper
   def format_stars(establishment)
-    "*" * establishment.stars.round
+    "*" * establishment.stars
   end
 end
