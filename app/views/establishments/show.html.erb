@@ -7,7 +7,7 @@
       <% @establishment.cuisines.each do |cuisine| %>
       <p><%= cuisine.name %></p>
       <% end %>
-      <p class="star-font-size"><%= format_stars(@establishment) %></p>
+      <p class="star-font-size"><%= @establishment.stars %> stars</p>
     </div>
   </div>
 
