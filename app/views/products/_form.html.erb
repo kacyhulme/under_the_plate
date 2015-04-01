@@ -1,0 +1,27 @@
+<%= form_for(@product) do |f| %>
+<%= render "shared/errors", object: @product %>
+<fieldset>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.text_field :price, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <% if @product.new_record? %>
+    <%= f.submit "Add Product", class: "btn btn-primary btn-sm" %>
+    <% else %>
+    <%= f.submit "Update Product", class: "btn btn-primary btn-sm"  %>
+    <% end %>
+  </div>
+</fieldset>
+<% end %>

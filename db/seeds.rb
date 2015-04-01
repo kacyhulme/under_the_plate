@@ -5,6 +5,38 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Product.create!([
+  {
+    name: "Green Pants",
+    description: "These are pants and they're green",
+    price: 15.50
+  },
+  {
+    name: "Blue Shoes",
+    description: "Blue shoes go with other things that are blue",
+    price: 25.00
+  },
+  {
+    name: "Grey Sweatshirt",
+    description: "We love grey sweathsirts",
+    price: 20.00
+  },
+  {
+    name: "Running shoes",
+    description: "These shoes are really good for running",
+    price: 135.50
+  },
+  {
+    name: "Chair",
+    description: "One chair for sale.",
+    price: 15.95
+  },
+  {
+    name:"Tables",
+    description: "But we have many tables.",
+    price: 105.75
+  }
+])
 
 Establishment.create!([
   {
@@ -118,7 +150,8 @@ Comment.create!([
   user_id: 4,
   establishment_id: 1
   }
-  ])
+])
+
 Distributor.create!([
   {
     food_group_id: 1,

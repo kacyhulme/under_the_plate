@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :products
+
   get 'welcome' => 'welcome#index'
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
