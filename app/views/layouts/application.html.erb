@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title><%= page_title %></title>
-    <%= stylesheet_link_tag    "application", media: "all" %>
-    <%= csrf_meta_tags %>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
+<head>
+  <title><%= page_title %></title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="<%= controller_name %> <%= action_name %>">
 
-    <%= render 'layouts/nav' %>
+  <%= render 'layouts/nav' %>
 
-    <div class="container">
-      <% unless flash.empty? %>
-      <div class="flash">
-        <% if flash[:notice] %>
-          <div class="alert alert-info">
-            <%= flash[:notice] %>
-          </div>
-        <% end %>
-      </div>
-      <% end %>
+  <div class="container">
+    <% unless flash.empty? %>
+    <%= render 'layouts/flash' %>
+    <% end %>
+  </div>
 
-      <%= yield %>
 
-    </div>
-    <%= javascript_include_tag "application" %>
-  </body>
+  <%= yield %>
 
-  <%= render 'shared/footer' %>
+</div>
+<%= javascript_include_tag "application" %>
+</body>
+
+<%= render 'shared/footer' %>
 
 </html>
