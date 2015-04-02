@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <% if current_user_admin? %>
+  <% if current_user.id === @product.user.id || current_user.admin? %>
   <div class="row add-margin-bottom">
     <div class="col-md-12">
       <div class="button-margin"><%= link_to 'View All Products', products_path, class: "btn btn-primary btn-sm" %></div>
