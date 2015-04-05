@@ -9,7 +9,7 @@ gem 'pg'
 group :development, :test do
   gem 'pry-rails'
   gem 'quiet_assets'
-  gem 'debugger'
+  gem 'byebug'
   gem 'rspec-rails','~> 3.0.0'
   gem 'factory_girl_rails'
   gem 'faker'
