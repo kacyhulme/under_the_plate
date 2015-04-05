@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    flash.now[:notice] = "Full selling and purchasing power COMING SOON!"
     @product = Product.find(params[:id])
   end
 
@@ -16,7 +17,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     if @product.save
-      redirect_to @product, notice: "Thanks! Your product was successfully added!"
+      redirect_to @product, notice: "Thanks! Your product was successfully added! Full selling and purchasing power COMING SOON!"
     else
       render :new
     end
