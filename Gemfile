@@ -52,5 +52,4 @@ gem 'friendly_id', '~> 5.0.0', :require => "friendly_id"
 gem 'geocoder'
 #gem 'gmaps4rails', '2.0.3'
 
-gem 'monologue', github: 'kacyhulme/monologue'
 gem 'non-stupid-digest-assets', '~> 1.0.4'
