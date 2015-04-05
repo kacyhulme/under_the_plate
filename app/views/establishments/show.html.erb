@@ -2,17 +2,15 @@
 
 <div class="container"> 
   <div class="row"> 
-    <div class="col-md-12" id="establishment_header">
+    <div class="col-md-6" id="establishment_header">
       <h1><%= @establishment.name %></h1>
       <% @establishment.cuisines.each do |cuisine| %>
       <p><%= cuisine.name %></p>
       <% end %>
       <p class="star-font-size"><%= @establishment.stars %> stars</p>
     </div>
-  </div>
 
-  <div class="row"> 
-    <div class="col-md-5">
+    <div class="col-md-6">
       <h3> Locations </h3>
       <% @establishment.addresses.each do |address| %>
       <p><%= address.address_display_name %><%= "  " %><%= link_to "Details", establishment_address_path(@establishment, address) %></p>
@@ -21,27 +19,25 @@
       <div class="btn btn-info btn-sm"><%= link_to "Add a Location", new_establishment_address_path(@establishment) %></div>
       <% end %>
     </div>
+  </div>
 
-    <div class="col-md-4">
-      <div class="row">
-        <h3> Distributors They Use</h3>
-        <% if @establishment.distributors.blank? %>
-        <h3>TBD</h3>
-        <% else %>
-        <% @establishment.distributors.each do |d| %>
-        <p><%= d.name %></p>
-        <% end %>
-        <% end %>
-      </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3> Distributors and/or Farmers</h3>
+      <% if @establishment.distributors.blank? %>
+      <h3>TBD</h3>
+      <% else %>
+      <% @establishment.distributors.each do |d| %>
+      <p><%= d.name %><%= "  " %><%= link_to "Details", distributor_path(d) %></p>
+      <% end %>
+      <% end %>
     </div>
 
-    <div class="col-md-3">
-      <div class="row">
-        <h3> Certifications and Qualifications </h3>
-        <% @establishment.qualifications.each do |q| %>
-        <p><%= q.name %></p>
-        <% end %>
-      </div>
+    <div class="col-md-6">
+      <h3> Labels and Categories</h3>
+      <% @establishment.qualifications.each do |q| %>
+      <p><%= q.name %></p>
+      <% end %>
     </div>
   </div>
 
@@ -64,16 +60,18 @@
   </div>
   <% end %>
 
-  <div class="row add-margin-bottom">
-    <div class="col-md-12">
-      <h3> What we really think about <%= @establishment.name %> </h3>
-      <p><%= @establishment.description %></p>
+  <div class="row add-margin-top">
+    <div class="col-md-12 center-text">
+      <div class="thumbnail thumbnail-color">
+        <h3>A few words from <%= @establishment.name %></h3>
+        <div> "Quote from restaurant" </div>
+      </div>
     </div>
   </div>
 
   <div class="row add-margin-bottom">
     <div class="col-md-12">
-      <h3>What you really think about <%= @establishment.name %></h3>
+      <h3>Comments</h3>
       <div class="btn btn-info btn-sm"><%= link_to "Add a Comment", new_establishment_comment_path(@establishment) %></div>
     </div>
   </div>

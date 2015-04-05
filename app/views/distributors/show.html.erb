@@ -4,7 +4,6 @@
   <div class="row">
     <div class="col-md-12">
       <h1><%= @distributor.name %></h1>
-      <h1><%= @distributor.description %></h1>
     </div>
     <div class="col-md-4">
       <h3>Addresses:</h3>
@@ -18,7 +17,7 @@
       </div>
     </div>
     <div class="col-md-4">
-    	<h3>Food Groups: </h3>
+    	<h3>Specialty: </h3>
       <ul>
         <% @food_groups.each do |f| %>
         <li><%= f.name %></li>
@@ -34,6 +33,14 @@
       <p><%= link_to "Delete Distributor", @distributor, method: :delete,
       data: { confirm: "Are you sure you want to delete this distributor?" }, class: "btn btn-primary btn-sm" %></p>
       <% end %>
+    </div>
+  </div>
+
+  <hr>
+  <div class="row add-margin-bottom">
+    <div class="col-md-12">
+      <h3>A few words from <%= @distributor.name %></h3>
+      <div><%= @distributor.description %></div>
     </div>
   </div>
 </div>

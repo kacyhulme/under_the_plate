@@ -447,6 +447,30 @@ QualificationStatus.create! ([
   {
     establishment_id: 6,
     qualification_id: 2
+  },
+  {
+    establishment_id: 1,
+    qualification_id: 1
+  },
+    {
+    establishment_id: 2,
+    qualification_id: 2
+  },
+    {
+    establishment_id: 3,
+    qualification_id: 3
+  },
+    {
+    establishment_id: 4,
+    qualification_id: 4
+  },
+    {
+    establishment_id: 5,
+    qualification_id: 5
+  },
+  {
+    establishment_id: 6,
+    qualification_id: 6
   }
 ])
 e1 = Establishment.find(1)

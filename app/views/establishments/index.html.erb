@@ -1,29 +1,27 @@
 <div class="container"> 
-  <div class="row"> 
-    <div class="col-md-12">
-      <p>There are <%= pluralize(@establishments.size, 'establishment') %></p>
-        <nav>
-         <%= link_to 'Add a New Establishment', new_establishment_path, class: "btn btn-primary btn-sm" %>
-        </nav>
-        <br>
-    </div>
-  </div>
+  <div class="row panel panel-default"> 
+    <div class="col-md-12 add-margin-bottom panel-body">
+     <h3>Click on an establishment below to see what farms they use and specials diets they cater to.</h3>
+     <p>Don't see the establishment you want? <%= " " %><%= link_to 'Add New Establishment', new_establishment_path %></p>
+   </div>
+ </div>
 </div>
 
 <% if @establishments.any? %>
 <div class="container"> 
   <div class="row"> 
     <% @establishments.each do |establishment| %> 
-      <div class="col-md-3">
-        <div class="thumbnail">
-          <h1><%= link_to establishment.name, establishment %></h1>
-          <div><%= pluralize(establishment.addresses.count, 'location') %></div>
-          <div><%= link_to 'Get the Details', establishment %></div> 
-        </div>  
-      </div>
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <h1><%= link_to establishment.name, establishment %></h1>
+        <div><%= pluralize(establishment.addresses.count, 'location') %></div>
+        <div><%= link_to 'Get the Details', establishment %></div> 
+      </div>  
+    </div>
     <% end %>
   </div>
 </div>
 <% else %>
-  <p>No search results match <%= params[:search] %>.</p>
+<p>No search results match <%= params[:search] %>.</p>
 <% end %>
+<div>There are <%= pluralize(@establishments.size, 'establishment') %></div>
