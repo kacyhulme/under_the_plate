@@ -5,6 +5,29 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Post.create!([
+  {
+    title: "I love food",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum quam ut magna auctor aliquam. Pellentesque porttitor, tellus ut egestas tincidunt, est mi aliquam erat, congue ultrices elit neque vitae justo. Fusce accumsan ultricies lacus non tincidunt. Nam tristique ac massa vitae laoreet. Cras imperdiet turpis ac ultrices pulvinar. Pellentesque sed erat tortor. Maecenas iaculis felis et urna semper, a ornare ex commodo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Donec vestibulum imperdiet turpis bibendum volutpat. In nisl massa, ultricies eget dolor quis, hendrerit rutrum elit." 
+    },
+  {
+    title: "Tempeh for Real",
+    body: "Cras imperdiet turpis ac ultrices pulvinar. Pellentesque sed erat tortor. Maecenas iaculis felis et urna semper, a ornare ex commodo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Donec vestibulum imperdiet turpis bibendum volutpat. In nisl massa, ultricies eget dolor quis, hendrerit rutrum elit. Suspendisse urna odio, iaculis eu est eu, dignissim mattis elit. Suspendisse nec scelerisque lorem, quis ultricies elit."
+    },
+  {
+    title: "Coconut Milk",
+    body: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Donec vestibulum imperdiet turpis bibendum volutpat. In nisl massa, ultricies eget dolor quis, hendrerit rutrum elit. Suspendisse urna odio, iaculis eu est eu, dignissim mattis elit. Suspendisse nec scelerisque lorem, quis ultricies elit. In ut elit laoreet, venenatis ligula ultrices, pretium nulla. Morbi quis finibus lectus, at ullamcorper enim. Morbi at neque dui."
+    },
+  {
+    title: "How To Make Vegan Cheese",
+    body: "Quisque volutpat ultricies orci, in consectetur augue. Aliquam non rutrum enim, et venenatis augue. Donec id cursus ex, ut consectetur magna. Sed sit amet convallis leo. Sed dapibus ornare metus, sed tristique ex. Phasellus eget nunc interdum, convallis augue et, volutpat nisi. In maximus at velit ut dignissim. Nam sed dui ac velit rutrum tempor. Suspendisse aliquam, orci pharetra iaculis cursus, tellus diam aliquam sem, eget aliquam neque enim a libero. Curabitur fringilla interdum elementum. "
+    },
+  {
+    title: "Get On The Bandwagon",
+    body: "In maximus at velit ut dignissim. Nam sed dui ac velit rutrum tempor. Suspendisse aliquam, orci pharetra iaculis cursus, tellus diam aliquam sem, eget aliquam neque enim a libero. Curabitur fringilla interdum elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent et quam fermentum, tristique est non, dictum ipsum. Donec sed condimentum elit, nec scelerisque felis. Quisque placerat sed leo non suscipit. Nam non commodo dolor, at consectetur purus."
+    }
+])
+
 Product.create!([
   {
     name: "Green Pants",

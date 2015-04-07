@@ -1,0 +1,25 @@
+<%= form_for(@post) do |f| %>
+<%= render "shared/errors", object: @post %>
+<fieldset>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="add-border">
+    <div class="form-group">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="actions">
+    <% if @post.new_record? %>
+    <%= f.submit "Add Post", class: "btn btn-primary btn-sm" %>
+    <% else %>
+    <%= f.submit "Update Post", class: "btn btn-primary btn-sm"  %>
+    <% end %>
+  </div>
+</fieldset>
+<% end %>

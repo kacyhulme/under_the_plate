@@ -1,0 +1,33 @@
+<div class="row panel panel-default"> 
+  <div class="col-md-4 add-margin-bottom panel-body">
+    <h3>About Me</h3>
+  </div>
+  <div class="col-md-4 add-margin-bottom panel-body">
+    <h3>All Posts</h3>
+  </div>
+  <div class="col-md-4 add-margin-bottom panel-body">
+    <h3>Follow Me</h3>
+
+    <%= render 'shared/social_media_icons' %>
+
+  </div>
+</div>
+
+
+<% if @posts.any? %>
+<div class="container"> 
+  <div class="row"> 
+    <% @posts.each do |post| %> 
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <h1><%= link_to post.title, post %></h1>
+        <div><%= link_to 'Get the Details', post %></div> 
+      </div>  
+    </div>
+    <% end %>
+  </div>
+  <% else %>
+  <p>No search results match <%= params[:search] %>.</p>
+  <% end %>
+  <div>There are <%= pluralize(@posts.size, 'post') %></div>
+</div>

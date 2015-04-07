@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :posts
+
   resources :products
 
   get 'welcome' => 'welcome#index'
