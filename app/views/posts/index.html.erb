@@ -13,15 +13,14 @@
   </div>
 </div>
 
-
 <% if @posts.any? %>
 <div class="container"> 
   <div class="row"> 
-    <% @posts.each do |post| %> 
+    <% @posts.each do |p| %> 
     <div class="col-md-3">
       <div class="thumbnail">
-        <h1><%= link_to post.title, post %></h1>
-        <div><%= link_to 'Get the Details', post %></div> 
+        <h1><%= link_to p.title, blog_path(p) %></h1>
+        <div><%= link_to 'Get the Details', blog_path(p) %></div> 
       </div>  
     </div>
     <% end %>
