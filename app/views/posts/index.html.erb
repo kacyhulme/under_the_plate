@@ -3,10 +3,9 @@
     <li class="flex-item thumbnail thumbnail-sizing-aside">
       <h3>Recent Posts</h3>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <% @posts.recent.each do |p| %> 
+        <li><%= link_to p.title, blog_path(p) %></li>
+        <% end %>
       </ul>
     </li>
     <li class="flex-item thumbnail thumbnail-sizing-aside">
@@ -15,7 +14,7 @@
     </li>
     <li class="flex-item thumbnail thumbnail-sizing-aside">
       <h3>About Me</h3>
-      <p>My name is Kacy Hulme. My writings here are only my opinion are meant to be purely informational and fun to read. I have been following a Vegan diet since around 2007. I must admit, it was quite a transition for me. But the way it made me feel was out of this world. I'll never go back. I had varying health issues prior to adopting a veg diet, many centering in my gut. I have found great relief, enjoyment, purpose, excitement and community by changing the food that I eat. The effects far exceed even my own health. It is a global issue now. And I am more than proud to do my part. </p>
+      <p>Hi! Thansk for visiting my site! My name Kacy Hulme. The writings here are my own opinion only are meant to be purely informational and fun to read. I have been following a Vegan diet since around 2007. I must admit, it was quite a transition for me. But the way it made me feel was out of this world. I'll never go back. I had varying health issues prior to adopting a veg diet, many centering in my gut. I have found great relief, enjoyment, purpose, excitement and community by changing the food that I eat. The effects far exceed even my own health. It is a global issue now. And I am more than proud to do my part. </p>
     </li>
     <li class="flex-item thumbnail thumbnail-sizing-aside">
       <h3>Other Stuff</h3>
