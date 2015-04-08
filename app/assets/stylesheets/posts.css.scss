@@ -31,4 +31,15 @@ aside {
   width: 100px;  /* Or whatever */
   height: 100px; /* Or whatever */
   margin: auto;  /* Magic! */
+  border: black solid 1px;
+}
+
+.thumbnail.thumbnail-sizing-main {
+ text-align: center;
+ height: 200px;
+}
+
+
+.thumbnail.thumbnail-sizing-aside {
+ padding: 15px;
 }

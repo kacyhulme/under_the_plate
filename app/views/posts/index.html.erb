@@ -1,6 +1,6 @@
 <aside>
   <ul class="flex-container">
-    <li class="flex-item thumbnail">
+    <li class="flex-item thumbnail thumbnail-sizing-aside">
       <h3>Recent Posts</h3>
       <ul>
         <li></li>
@@ -9,15 +9,16 @@
         <li></li>
       </ul>
     </li>
-    <li class="flex-item thumbnail">
+    <li class="flex-item thumbnail thumbnail-sizing-aside">
       <h3>Follow Me</h3>
       <%= render 'shared/social_media_icons' %>
     </li>
-    <li class="flex-item thumbnail">
-      <h3>Instagram</h3>
+    <li class="flex-item thumbnail thumbnail-sizing-aside">
+      <h3>About Me</h3>
+      <p>My name is Kacy Hulme. My writings here are only my opinion are meant to be purely informational and fun to read. I have been following a Vegan diet since around 2007. I must admit, it was quite a transition for me. But the way it made me feel was out of this world. I'll never go back. I had varying health issues prior to adopting a veg diet, many centering in my gut. I have found great relief, enjoyment, purpose, excitement and community by changing the food that I eat. The effects far exceed even my own health. It is a global issue now. And I am more than proud to do my part. </p>
     </li>
-    <li class="flex-item thumbnail">
-      <h3>Facebook</h3>
+    <li class="flex-item thumbnail thumbnail-sizing-aside">
+      <h3>Other Stuff</h3>
     </li>
   </aside>
 
@@ -25,9 +26,10 @@
     <% if @posts.any? %>
     <ul class="flex-container">
       <% @posts.each do |p| %> 
-      <li class="flex-item thumbnail">
+      <li class="flex-item thumbnail thumbnail-sizing-main">
         <h1><%= link_to p.title, blog_path(p) %></h1>
-        <p><%= link_to 'Get the Details', blog_path(p) %></p> 
+        <p><%= truncate(p.body, length: 200, separator: ' ') %></p>
+        <p><%= link_to 'Read the Rest', blog_path(p) %></p> 
       </li>  
       <% end %>
     </ul>
