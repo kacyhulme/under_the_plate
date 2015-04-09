@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -16,7 +17,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post, notice: "Post was successfully added."
+      redirect_to blog_index_url, notice: "Post was successfully added."
     else
       render :new
     end
