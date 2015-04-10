@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :require_signin, except: [:index, :show]
+  before_action :require_admin, except: [:index, :show, :new, :create]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
     @products = Product.all
@@ -6,7 +9,6 @@ class ProductsController < ApplicationController
 
   def show
     flash.now[:notice] = "Full selling and purchasing power COMING SOON!"
-    @product = Product.find(params[:id])
   end
 
   def new

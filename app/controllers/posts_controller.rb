@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :require_signin, except: [:index, :show]
   before_action :require_admin, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
@@ -7,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+
   end
 
   def new
