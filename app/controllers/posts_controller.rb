@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: "Updates have been saved"
+      redirect_to blog_path, notice: "Updates have been saved"
     else
       render :edit
     end
