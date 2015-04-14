@@ -3,8 +3,8 @@
     <li class="flex-item thumbnail thumbnail-sizing-aside">
       <h3>Recent Posts</h3>
       <ul>
-        <% @posts.recent.each do |p| %> 
-        <li><%= link_to p.title, blog_path(p) %></li>
+        <% @posts.recent.sort_by(&:created_at).each do |p| %> 
+        <li><%= link_to p.title, blog_path(p) %> <%= p.created_at.strftime("%b %d") %></li>
         <% end %>
       </ul>
     </li>
@@ -24,7 +24,7 @@
   <main>
     <% if @posts.any? %>
     <ul class="flex-container">
-      <% @posts.each do |p| %> 
+      <% @posts.sort_by(&:created_at).each do |p| %> 
       <li class="flex-item thumbnail thumbnail-sizing-main">
         <h1><%= link_to p.title, blog_path(p) %></h1>
         <p><%= truncate(p.body, length: 200, separator: ' ') %></p>
