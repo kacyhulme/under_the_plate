@@ -27,7 +27,8 @@ class AddressesController < ApplicationController
   private
 
   def load_addressable
-    @addressable = Establishment.friendly.find(params[:establishment_id])
+    klass = [Establishment, Distributor].detect { |c| params["#{c.name.underscore}_id"] }
+    @addressable = klass.friendly.find(params["#{klass.name.underscore}_id"])
   end
 
   def address_params
