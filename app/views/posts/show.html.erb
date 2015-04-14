@@ -9,10 +9,10 @@
     </div>
   </div>
 
+  <div class="button-margin"><%= link_to 'View All Posts', blog_index_path, class: "btn btn-primary btn-sm" %></div>
   <% if current_user_admin? %>
   <div class="row add-margin-bottom">
     <div class="col-md-12">
-      <div class="button-margin"><%= link_to 'View All Posts', blog_index_path, class: "btn btn-primary btn-sm" %></div>
       <div class="button-margin"><%= link_to "Delete Post", blog_path, method: :delete, 
       data: { confirm: "Are you sure you want to delete this post?" }, class: "btn btn-primary btn-sm" %></div>
     </div>
