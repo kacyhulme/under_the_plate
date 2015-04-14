@@ -1,4 +1,4 @@
-<%= form_for(@post, :url => blog_index_url) do |f| %>
+<%= form_for @post, url: blog_path do |f| %>
 <%= render "shared/errors", object: @post %>
 <fieldset>
   <div class="form-group">
