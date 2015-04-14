@@ -18,7 +18,7 @@
     <p>Number of Stars</p>
     <div class="form-group">
       <%= f.label :stars %>
-      <% Review::STARS.each do |star| %>
+      <% Establishment::STARS.each do |star| %>
       <span class="star">
         <%= f.radio_button :stars, star %> <%= star %>
       </span>
