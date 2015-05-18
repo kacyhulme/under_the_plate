@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'recipes' => "welcome"
   get 'advocacy' => "welcome"
   get 'products' => "welcome"
+  get 'menu' => "welcome"
 
   resources :distributions
   resource :session

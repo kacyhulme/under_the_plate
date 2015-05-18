@@ -10,4 +10,8 @@ class WelcomeController < ApplicationController
 
   def advocacy
   end
+
+  def menu
+  end
+  
 end
