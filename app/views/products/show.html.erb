@@ -1,5 +1,5 @@
 <% content_for(:title, @product.name) %>
-
+<div class="add-margin-bottom"><%= link_to 'Back To All Products', products_path, class: "btn btn-primary btn-sm" %></div>
 <div class="container"> 
   <div class="row"> 
     <div class="col-md-12" id="establishment_header">
@@ -8,11 +8,10 @@
       <p><%= @product.price %></p>
     </div>
   </div>
-  <!-- ADD LATER: current_user === @product.user ||  -->
-  <% if current_user.admin? %> 
+
+  <% if current_user_admin? %> 
   <div class="row"> 
     <div class="col-md-5">
-      <div class="add-margin-bottom"><%= link_to 'Back To All Products', products_path, class: "btn btn-primary btn-sm" %></div>
       <!-- PAYPAL TEST -->
       <form name="_xclick" action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
         <input type="hidden" name="cmd" value="_xclick">
