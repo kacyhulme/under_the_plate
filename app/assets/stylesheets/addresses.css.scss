@@ -4,8 +4,11 @@
 
 .location-show-inner {
   width: 49%;
-  margin: 0 auto;
-  position: relative;
-  transform: translateY(50%);
+  margin: 45px auto;
 }
 
+@media screen and (max-width: 990px) {
+  .location-show-inner {
+    margin: 0 auto;
+  }
+}
