@@ -2,53 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// #overlay {
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgba(0,0,0,.2);
-//   position: absolute;
-//   top:0;
-//   left:0;
-//   // display: none;
-// }
-
-// #modal {
-//   width: 300px;
-//   height: 120px;
-//   position: relative;
-//   padding: 15px;
-//   border: 1px solid grey;
-//   border-radius: 5px;
-//   background: #ffffff;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
-
-// #modaldismiss {
-//   position: relative;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
-
-.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable {
-  background:#b9cd6d;
-  border: 1px solid #b9cd6d;
-  color: #FFFFFF;
-  font-family: Arial;
+#overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.2);
+  position: absolute;
+  top:0;
+  left:0;
+  // display: none;
 }
 
-.ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix.ui-draggable-handle {
-  background:#b9cd6d;
-  border: 1px solid #b9cd6d;
-  color: #FFFFFF;
-  font-family: Arial; 
+#modal {
+  width: 400px;
+  height: 200px;
+  position: relative;
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background: #ffffff;
+  top: -14em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  p {
+    padding: 20px 15px 15px 15px;
+    text-align: center;
+  }
 }
 
-.ui-dialog-content.ui-widget-content {
- background:#b9cd6d;
- border: 1px solid #b9cd6d;
- color: #FFFFFF;
- font-family: Arial; 
+#modaldismiss {
+  position: relative;
+  margin: 0 154px;
 }
+
+button#modaldismiss {
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+}
+

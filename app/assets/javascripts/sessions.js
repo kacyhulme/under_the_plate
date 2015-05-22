@@ -2,26 +2,33 @@
 // All this logic will automatically be available in application.js.
 
 
-// var $overlay = $('<div id="overlay"></div>');
-// var $modal = $('<div id="modal"></div>');
-// var $button = $('<button id="modaldismiss">Dismiss</button>')
+var visited = document.cookie;
 
-// $modal.text("Hey there. Thanks for visiting my site! To log in without signing up, just enter the email guest@guest.com and the password of 'password'. Enjoy!");
+var firstVisit = (visited == "");
 
-// $("body").append($overlay);
-// $("body").append($modal);
-// $("body").append($button);
 
-// // on first session
+if (($('body.welcome.index').length) && firstVisit) {
+ var $overlay = $('<div id="overlay"></div>');
+ var $modal = $('<div id="modal"></div>');
+ var $paragraph = $('<p>""</p>')
+ var $button = $('<button id="modaldismiss">Dismiss</button>')
+ var $text = $paragraph.html("Hi there!<br>Thanks for visiting my site!<br>To log in without signing up, just enter the email guest@guest.com and the password of 'password'.<br>Enjoy!");
 
-// $overlay.show();
+ $("body").append($overlay);
+ $("body").append($modal);
+ $modal.append($paragraph);
+ $modal.append($button);
 
-// $overlay.click(function(){
-//   $overlay.hide();
-// });
+ $overlay.show();
 
-var $div = $('<div id="dialog" title="Welcome!">Thanks for visiting my site</div>');
+ $overlay.click(function(){
+  $overlay.hide();
+});
 
-$("body").append($div);
+ $button.click(function(){
+  $overlay.hide();
+  $modal.hide();
+  $button.hide();
+})
 
-$div.dialog();
+}
