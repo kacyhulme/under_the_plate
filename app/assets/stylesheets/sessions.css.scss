@@ -41,3 +41,28 @@ button#modaldismiss {
   border: none;
 }
 
+
+@media screen and (max-width: 480px) {
+#modal {
+  width: 60%;
+  height: 50%;
+  position: relative;
+  padding: 15px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background: #ffffff;
+  top: -14em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  p {
+    padding: 20px 15px 15px 15px;
+    text-align: center;
+  }
+}
+
+#modaldismiss {
+  position: relative;
+  margin: 0 35%;
+}
+}
